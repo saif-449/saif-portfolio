@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saif Khan | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS CSS For Ultra Smooth Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+          darkMode: 'class',
+          theme: {
+            extend: {
+              colors: {
+                brand: {
+                  blue: '#2563eb',
+                  indigo: '#4f46e5',
+                  dark: '#0f172a',
+                  lightBg: '#f8fafc'
+                }
+              },
+              fontFamily: {
+                sans: ['Plus Jakarta Sans', 'sans-serif'],
+                bengali: ['Noto Serif Bengali', 'serif'],
+              },
+              boxShadow: {
+                'premium': '0 10px 30px -5px rgba(0, 0, 0, 0.03), 0 20px 40px -10px rgba(0, 0, 0, 0.02)',
+                'premium-hover': '0 20px 40px -5px rgba(37, 99, 235, 0.15)',
+                'blue-glow': '0 15px 30px -5px rgba(37, 99, 235, 0.3)',
+              }
+            }
+          }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.5s ease, color 0.5s ease; }
+        
+        /* Universal Screen-Relative Fixed Background Aura */
+        #mouse-aura {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.10) 0%, rgba(59, 130, 246, 0.02) 40%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0; 
+            mix-blend-mode: multiply; 
+            will-change: transform;
+            transform: translate3d(-50%, -50%, 0);
+        }
+        
+        html.dark #mouse-aura {
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(79, 70, 229, 0.04) 45%, transparent 70%);
+            mix-blend-mode: screen;
+        }
+
+        /* Dark Container Fluid Spot Tracking Style */
+        .dark-container-glow {
+            position: relative;
+            overflow: hidden;
+        }
+        .container-cursor-spot {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(59, 130, 246, 0.06) 35%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            will-change: top, left;
+        }
+        .dark-container-glow:hover .container-cursor-spot {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-[#f8fafc] dark:bg-[#030712] text-brand-dark dark:text-slate-100 antialiased selection:bg-brand-blue selection:text-white relative overflow-x-hidden">
+
+    <!-- Universal Background Aura -->
+    <div id="mouse-aura"></div>
+
+    <!-- FIXED FLOATING LIVE MONITOR WIDGET -->
+    <div class="fixed bottom-6 left-6 z-50 space-y-2 pointer-events-auto select-none font-mono text-[10px] font-bold tracking-wider uppercase hidden sm:block">
+        <!-- Active Visitor Floating Badge -->
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200/50 dark:border-slate-800/50 shadow-premium backdrop-blur-md text-slate-600 dark:text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span id="visitor-counter">12 Active Visitor</span>
+        </div>
+        <!-- Live Server Time Badge -->
+        <div class="flex items-center gap-2 px-3 py-2 rounded-full bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200/50 dark:border-slate-800/50 shadow-premium backdrop-blur-md text-slate-800 dark:text-slate-200 min-w-[130px]">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>
+            <span id="live-clock">00:00:00 PM</span>
+            <span class="text-[8px] opacity-50 dark:opacity-40">LST</span>
+        </div>
+    </div>
+
+    <!-- Header Fixed Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/70 dark:bg-[#030712]/70 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 px-6 lg:px-16 py-4 flex justify-between items-center transition-all duration-300">
+        <a href="#home" class="text-xl font-extrabold tracking-tight text-brand-blue hover:scale-105 transition-transform duration-300">
+            Saif Khan<span class="text-brand-indigo">.</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600 dark:text-slate-400">
+            <a href="#home" id="nav-home" class="hover:text-brand-blue dark:hover:text-brand-blue capitalize transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue hover:after:w-full after:transition-all duration-300">Home</a>
+            <a href="#featured" id="nav-featured" class="hover:text-brand-blue dark:hover:text-brand-blue capitalize transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue hover:after:w-full after:transition-all duration-300">Featured</a>
+            <a href="#services" id="nav-services" class="hover:text-brand-blue dark:hover:text-brand-blue capitalize transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue hover:after:w-full after:transition-all duration-300">Services</a>
+            <a href="#tools" id="nav-tools" class="hover:text-brand-blue dark:hover:text-brand-blue capitalize transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue hover:after:w-full after:transition-all duration-300">Tools</a>
+            <a href="#contact" id="nav-contact" class="hover:text-brand-blue dark:hover:text-brand-blue capitalize transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue hover:after:w-full after:transition-all duration-300">Contact</a>
+        </nav>
+        
+        <div class="flex items-center gap-3">
+            <button id="theme-toggle" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-amber-400 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-300 active:scale-90">
+                <i id="theme-icon" class="fa-solid fa-sun text-base"></i>
+            </button>
+            <button id="lang-toggle" class="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-all duration-300 active:scale-95">
+                <i class="fa-solid fa-language text-sm"></i> <span id="lang-text">English</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero / Intro Section -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 relative z-10 bg-transparent">
+        <div class="max-w-4xl mx-auto space-y-6" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-4xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
+                <span id="hero-greet" class="font-sans font-bold text-slate-800 dark:text-slate-200">Hi, I am</span> 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-indigo">Saif Khan</span>
+            </h1>
+            <p id="hero-title" class="text-base lg:text-xl text-slate-600 dark:text-slate-400 font-medium max-w-2xl mx-auto font-mono">// CSE STUDENT & CYBER LEARNER</p>
+            <p id="hero-desc" class="text-sm lg:text-base text-slate-500 dark:text-slate-400 max-w-xl mx-auto font-light leading-relaxed">
+                I am a Diploma in Computer Science & Technology student with a strong interest in Linux, Web Development and Cybersecurity.
+            </p>
+
+            <!-- Social Links Panel -->
+            <div class="flex justify-center gap-4 pt-4" data-aos="zoom-in" data-aos-delay="300">
+                <a href="https://github.com/Alvi01719" target="_blank" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-500"><i class="fa-brands fa-github text-lg"></i></a>
+                <a href="https://www.linkedin.com/in/saif-khan-34ba4a24b" target="_blank" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-500"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                <a href="https://www.facebook.com/Saif449" target="_blank" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-500"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                <a href="https://www.instagram.com/alvi_ahmed_saif" target="_blank" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-500"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="https://x.com/AlviahmedS10297" target="_blank" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-500"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+            </div>
+
+            <!-- Stats Showcase Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12 max-w-3xl mx-auto w-full" data-aos="fade-up" data-aos-delay="500">
+                <div class="p-6 rounded-2xl bg-brand-blue text-white shadow-blue-glow text-center transform hover:scale-[1.03] transition-all duration-500">
+                    <h3 class="text-3xl font-bold">100%+</h3>
+                    <p id="stat-dedication" class="text-xs opacity-80 mt-1">Dedication Level</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white border border-slate-100 dark:bg-[#0b1329] dark:border-slate-800 shadow-premium text-center transform hover:scale-[1.03] hover:shadow-premium-hover transition-all duration-500">
+                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white">Mymensingh</h3>
+                    <p id="stat-institute" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Polytechnic Institute</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white border border-slate-100 dark:bg-[#0b1329] dark:border-slate-800 shadow-premium text-center transform hover:scale-[1.03] hover:shadow-premium-hover transition-all duration-500">
+                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white">Active</h3>
+                    <p id="stat-node" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Learning Node</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Goal Section -->
+    <section id="featured" class="py-24 bg-transparent border-t border-slate-100 dark:border-slate-800/40 relative z-10 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center space-y-2 mb-16" data-aos="fade-up">
+                <h2 id="sec-featured-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Education & Career Objective</h2>
+                <div class="w-12 h-1 bg-brand-blue mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                <!-- Box 1 -->
+                <div class="p-8 rounded-3xl bg-white/60 dark:bg-[#0b1329]/40 border border-slate-200/50 dark:border-slate-800/50 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue hover:text-white dark:hover:bg-brand-blue transition-all duration-500 ease-in-out space-y-4 group" data-aos="fade-right" data-aos-duration="800">
+                    <span class="text-xs font-bold text-brand-indigo tracking-wider uppercase font-mono group-hover:text-white/80 dark:text-brand-blue">// EDUCATION_CORE</span>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-white transition-colors duration-500">Diploma in Computer Science & Technology</h3>
+                    <p class="text-slate-600 dark:text-slate-300 font-medium group-hover:text-white/90 transition-colors duration-500">Mymensingh Polytechnic Institute</p>
+                    <p id="feat-edu-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-200/60 dark:border-slate-800/60 group-hover:text-white/80 group-hover:border-white/20 transition-all duration-500">
+                        I am a CSE student. Through this polytechnic curriculum, I am acquiring detailed expertise regarding structural data patterns, basic Linux architectures, and code compilation pipelines.
+                    </p>
+                </div>
+                <!-- Box 2 (100% SECURE INNER QUOTE EMBEDMENT NODE) -->
+                <div class="p-8 rounded-3xl bg-white/60 dark:bg-[#0b1329]/40 border border-slate-200/50 dark:border-slate-800/50 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue hover:text-white dark:hover:bg-brand-blue transition-all duration-500 ease-in-out space-y-4 flex flex-col justify-between group" data-aos="fade-left" data-aos-duration="800">
+                    <div>
+                        <span class="text-xs font-bold text-brand-blue tracking-wider uppercase font-mono group-hover:text-white/80 transition-colors duration-500">// CAREER_GOAL</span>
+                        <h3 id="feat-goal-title" class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-white transition-colors duration-500">Cybersecurity & Enterprise Security</h3>
+                    </div>
+                    <!-- Fixed quote block to stay consistently readable in light/dark transitions without overlay locks -->
+                    <div class="text-sm text-slate-600 dark:text-slate-300 border-l-4 border-brand-blue pl-4 my-4 py-2 group-hover:text-white group-hover:border-white transition-all duration-500">
+                        <p class="italic font-medium">"My goal is to become a skilled Cybersecurity Professional and continuously improve my technical expertise."</p>
+                    </div>
+                    <p id="feat-goal-desc" class="text-sm text-slate-500 dark:text-slate-400 group-hover:text-white/80 transition-colors duration-500">
+                        Continuously analyzing new cyber threat matrices, security protocols, and defensive strategies to establish myself as a highly skilled global professional is my main objective.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-transparent border-t border-slate-200/50 dark:border-slate-800/40 relative z-10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center space-y-2 mb-16" data-aos="fade-up">
+                <span id="sec-services-tag" class="text-xs font-semibold text-brand-blue uppercase tracking-wider block">What We Provide</span>
+                <h2 id="sec-services-title" class="text-3xl lg:text-5xl font-extrabold text-slate-900 dark:text-white">Our Services</h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto rounded-full mt-2"></div>
+            </div>
+
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1: Cyber Security -->
+                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="50">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Cyber Security</h3>
+                    <p id="serv-1-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">To safeguard your digital assets from threat actors, we offer premium protection protocols and absolute security fundamentals auditing setup.</p>
+                </div>
+
+                <!-- Card 2: Web Developing -->
+                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Web Developing</h3>
+                    <p id="serv-2-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Elevate your corporate architecture to the peak of the global digital era by deploying ultra-modern and fully responsive web systems.</p>
+                </div>
+
+                <!-- Card 3: App Developing -->
+                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">App Developing</h3>
+                    <p id="serv-3-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Developing exceptionally high-performance, modular, and native standard mobile applications optimized perfectly for both Android and iOS systems.</p>
+                </div>
+
+                <!-- Card 4: Digital Marketing -->
+                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
+                        <i class="fa-solid fa-paste"></i>
+                    </div>
+                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Digital Marketing</h3>
+                    <p id="serv-4-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Reaching target consumer demographics seamlessly by establishing elite marketing tracks across global search networks and targeted Social Media frameworks.</p>
+                </div>
+
+                <!-- Card 5: Video Editing -->
+                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
+                        <i class="fa-solid fa-film"></i>
+                    </div>
+                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Video Editing</h3>
+                    <p id="serv-5-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Transform raw footage components into highly engaging, dynamic, and clean commercial media clips with production-grade computational editing.</p>
+                </div>
+
+                <!-- Card 6: Graphics Design -->
+                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Graphics Design</h3>
+                    <p id="serv-6-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Forging dynamic and highly memorable structural brand nodes, logos, and vector assets to build an authoritative visual corporate identity architecture.</p>
+                </div>
+
+                <!-- Card 7: Website Security -->
+                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="350">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Website Security</h3>
+                    <p id="serv-7-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Deploying active endpoint code analysis pipelines, remote malware scrubbing operations, and structural defense shields to maintain live web infrastructure states.</p>
+                </div>
+
+                <!-- Card 8: Ethical Hacking -->
+                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Ethical Hacking</h3>
+                    <p id="serv-8-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Conducting proactive penetration testing pipelines to isolate low-level software vulnerabilities and implement robust remediation blocks before exploitation occurs.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Scanner Banner & Lab Tools -->
+    <section id="tools" class="py-24 bg-transparent border-t border-slate-100 dark:border-slate-800/40 relative z-10">
+        <div class="max-w-6xl mx-auto px-6 space-y-20">
+            
+            <!-- SECTION 1: Vulnerability Scanner 2.0 Banner Container -->
+            <div id="glow-banner-container" class="w-full bg-[#0b1329] border border-slate-800/80 rounded-[36px] py-16 px-6 lg:px-12 text-center text-white relative overflow-hidden shadow-2xl group transition-all duration-500 dark-container-glow" data-aos="zoom-in" data-aos-duration="1000">
+                <!-- Inside Tracker Spotlight -->
+                <div id="banner-spotlight" class="container-cursor-spot"></div>
+
+                <div class="relative z-10 max-w-2xl mx-auto space-y-5">
+                    <span id="scan-tag" class="px-3 py-1 bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-[10px] font-bold tracking-widest font-mono rounded-full uppercase inline-block">● Global Security Database Active</span>
+                    <h2 class="text-3xl lg:text-5xl font-extrabold tracking-tight">Vulnerability <span class="text-brand-blue">Scanner</span> 2.0</h2>
+                    <p id="scan-desc" class="text-xs lg:text-sm text-slate-400 max-w-lg mx-auto leading-relaxed">Input your target social media profile token string or security integrity URL endpoint. Our localized AI pipeline will automatically simulate threat vectors and calculate relative structural risk parameters.</p>
+                    <div class="flex flex-col sm:flex-row items-center gap-3 max-w-xl mx-auto pt-6 bg-slate-950/40 p-2 rounded-2xl border border-white/5 backdrop-blur-sm">
+                        <div class="flex items-center gap-3 flex-1 px-3 w-full">
+                            <i class="fa-solid fa-magnifying-glass text-slate-500 text-sm"></i>
+                            <input type="text" id="scan-input" placeholder="FB/Insta Link or Password..." class="w-full bg-transparent border-none text-xs focus:outline-none text-white placeholder-slate-500">
+                        </div>
+                        <button id="scan-btn" class="w-full sm:w-auto bg-brand-blue hover:bg-blue-600 shadow-blue-glow text-white px-8 py-3.5 rounded-xl text-xs font-bold transition-all font-sans tracking-wide active:scale-95">DEEP SCAN</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: "আমার প্রজেক্ট এবং টুলস" Section Container -->
+            <div id="glow-projects-container" class="w-full bg-[#0b1329] border border-slate-800/80 rounded-[36px] py-16 px-6 lg:px-12 text-white relative shadow-2xl group transition-all duration-500 dark-container-glow" data-aos="fade-up">
+                <!-- Inside Tracker Spotlight -->
+                <div id="projects-spotlight" class="container-cursor-spot"></div>
+
+                <div class="relative z-10 space-y-12">
+                    <div class="text-center space-y-2">
+                        <h2 id="sec-tools-title" class="text-2xl lg:text-4xl font-extrabold text-white">My Projects & Tools</h2>
+                        <div class="w-12 h-1 bg-brand-blue mx-auto rounded-full mt-2"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Project Box 1 -->
+                        <div class="p-6 rounded-3xl bg-slate-950/40 border border-white/5 flex flex-col justify-between h-56 hover:bg-brand-blue hover:border-brand-blue hover:-translate-y-1 transform transition-all duration-300 group/item relative z-30">
+                            <div class="space-y-2">
+                                <div class="w-8 h-8 rounded-lg bg-brand-blue/20 flex items-center justify-center text-brand-blue group-hover/item:bg-white/20 group-hover/item:text-white transition-all duration-300"><i class="fa-solid fa-gift"></i></div>
+                                <h4 id="proj-1-title" class="font-bold text-base text-brand-blue pt-2 group-hover/item:text-white transition-colors">Digital Salami Claim System 🌚</h4>
+                                <p id="proj-1-desc" class="text-xs text-slate-400 group-hover/item:text-white/90 transition-colors">A highly interactive, gamified, and fun structural laboratory script designed to optimize and automate the collection sequence of festive Eid greetings.</p>
+                            </div>
+                            <!-- Visit Demo Button Box -->
+                            <div class="flex justify-end pt-2">
+                                <a href="#" class="px-4 py-2 bg-brand-blue group-hover/item:bg-white text-white group-hover/item:text-brand-blue font-mono text-xs font-bold rounded-xl shadow-md hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                                    Visit Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Project Box 2 -->
+                        <div class="p-6 rounded-3xl bg-slate-950/40 border border-white/5 flex flex-col justify-between h-56 hover:bg-brand-blue hover:border-brand-blue hover:-translate-y-1 transform transition-all duration-300 group/item relative z-30">
+                            <div class="space-y-2">
+                                <div class="w-8 h-8 rounded-lg bg-brand-blue/20 flex items-center justify-center text-brand-blue group-hover/item:bg-white/20 group-hover/item:text-white transition-all duration-300"><i class="fa-solid fa-wallet"></i></div>
+                                <h4 class="font-bold text-base pt-2 group-hover/item:text-white transition-colors">Nagad Eid Salami</h4>
+                                <p id="proj-2-desc" class="text-xs text-slate-400 group-hover/item:text-white/90 transition-colors">A customized interface blueprint that accurately replicates the operational financial wallet parameters to broadcast digital Eid allocations safely.</p>
+                            </div>
+                            <!-- Visit Demo Button Box -->
+                            <div class="flex justify-end pt-2">
+                                <a href="#" class="px-4 py-2 bg-brand-blue group-hover/item:bg-white text-white group-hover/item:text-brand-blue font-mono text-xs font-bold rounded-xl shadow-md hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                                    Visit Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Project Box 3 -->
+                        <div class="p-6 rounded-3xl bg-slate-950/40 border border-white/5 flex flex-col justify-between h-56 hover:bg-brand-blue hover:border-brand-blue hover:-translate-y-1 transform transition-all duration-300 group/item relative z-30">
+                            <div class="space-y-2">
+                                <div class="w-8 h-8 rounded-lg bg-brand-blue/20 flex items-center justify-center text-brand-blue group-hover/item:bg-white/20 group-hover/item:text-white transition-all duration-300"><i class="fa-solid fa-paint-brush"></i></div>
+                                <h4 id="proj-3-title" class="font-bold text-base text-brand-blue pt-2 group-hover/item:text-white transition-colors">Premium Eid Banner Architect</h4>
+                                <p id="proj-3-desc" class="text-xs text-slate-400 group-hover/item:text-white/90 transition-colors">An advanced graphic asset processing node that utilizes coordinate data layers to compile fully personalized and high-resolution digital media greetings.</p>
+                            </div>
+                            <!-- Visit Demo Button Box -->
+                            <div class="flex justify-end pt-2">
+                                <a href="#" class="px-4 py-2 bg-brand-blue group-hover/item:bg-white text-white group-hover/item:text-brand-blue font-mono text-xs font-bold rounded-xl shadow-md hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                                    Visit Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact & Address -->
+    <section id="contact" class="py-24 bg-transparent border-t border-slate-200/50 dark:border-slate-800/40 relative z-10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center space-y-2 mb-16" data-aos="fade-up">
+                <h2 id="sec-contact-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Establish Realtime Transmission Block</h2>
+                <div class="w-12 h-1 bg-brand-blue mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+                <div class="lg:col-span-2 space-y-4" data-aos="fade-right" data-aos-duration="800">
+                    <div class="p-5 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/30 dark:border-slate-800/50 flex items-center gap-4 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue hover:text-white transition-all duration-500 ease-in-out group relative z-30">
+                        <div class="w-10 h-10 rounded-xl bg-brand-blue/10 dark:bg-slate-800 flex items-center justify-center text-brand-blue group-hover:bg-white/20 group-hover:text-white transition-all duration-500"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <span id="lbl-call" class="block text-[10px] font-mono tracking-wider text-slate-400 group-hover:text-white/70 uppercase transition-colors duration-500">Audio Link Control</span>
+                            <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-white transition-colors duration-500">01932357172</span>
+                        </div>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/30 dark:border-slate-800/50 flex items-center gap-4 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue hover:text-white transition-all duration-500 ease-in-out group relative z-30">
+                        <div class="w-10 h-10 rounded-xl bg-brand-blue/10 dark:bg-slate-800 flex items-center justify-center text-brand-blue group-hover:bg-white/20 group-hover:text-white transition-all duration-500"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <span id="lbl-email" class="block text-[10px] font-mono tracking-wider text-slate-400 group-hover:text-white/70 uppercase transition-colors duration-500">Email Routing Port</span>
+                            <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-white transition-colors duration-500">Alviahmedsaif321@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/30 dark:border-slate-800/50 flex items-center gap-4 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue hover:text-white transition-all duration-500 ease-in-out group relative z-30">
+                        <div class="w-10 h-10 rounded-xl bg-brand-blue/10 dark:bg-slate-800 flex items-center justify-center text-brand-blue group-hover:bg-white/20 group-hover:text-white transition-all duration-500"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <span id="lbl-address" class="block text-[10px] font-mono tracking-wider text-slate-400 group-hover:text-white/70 uppercase transition-colors duration-500">Physical Operations Base</span>
+                            <span id="val-address" class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-white transition-colors duration-500">Mymensingh Sadar, Mymensingh, Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Form Structure -->
+                <div class="lg:col-span-3 p-8 bg-white dark:bg-[#0b1329]/40 border border-slate-200/60 dark:border-slate-800/60 rounded-[32px] shadow-premium hover:shadow-premium-hover transition-all duration-500 relative z-30" data-aos="fade-left" data-aos-duration="800">
+                    <form id="cyberContactForm" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 font-mono">IDENTITY_STRING</label>
+                            <input type="text" id="formName" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-brand-blue/10 transition-all duration-300">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 font-mono">EMAIL_ADDR_GATEWAY</label>
+                            <input type="email" id="formEmail" required placeholder="identity@domain.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-brand-blue/10 transition-all duration-300">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 font-mono">MESSAGE_CONTENT</label>
+                            <textarea id="formMessage" rows="4" required placeholder="Type your secure data stream packet..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-brand-blue/10 shadow-inner transition-all duration-300 resize-none"></textarea>
+                        </div>
+                        <button id="form-submit-btn" type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-indigo to-brand-blue shadow-blue-glow text-white font-semibold text-sm transition-all duration-300 hover:opacity-95">
+                            Transmit Payload Packet
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer System Component -->
+    <footer class="py-12 border-t border-slate-200/50 dark:border-slate-800/40 bg-white dark:bg-[#030712] text-center text-xs text-slate-400 font-mono relative z-10">
+        © 2026 Saif Khan. All Rights Reserved.
+    </footer>
+
+    <!-- AOS Animation Engine Core JS CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS Engine
+        AOS.init({
+            once: true,
+            offset: 80,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+        });
+
+        // --- GLOBAL MULTI-LANGUAGE DICTIONARY DIALECT ENGINE ---
+        let currentLang = 'bn'; // Changed to 'bn' here so the first click event updates it immediately to 'en'
+        const dictionary = {
+            en: {
+                navHome: 'Home', navFeatured: 'Featured', navServices: 'Services', navTools: 'Tools', navContact: 'Contact',
+                heroGreet: "Hi, I am", heroTitle: "Diploma in Computer Science & Technology Student | Linux Enthusiast | Cybersecurity Learner",
+                heroDesc: "I am a Diploma in Computer Science & Technology student with a strong interest in Linux, Web Development and Cybersecurity.",
+                statDedication: "Dedication Level", statInstitute: "Polytechnic Institute", statNode: "Learning Node",
+                secFeaturedTitle: "Education & Career Objective", featEduDesc: "I am a CSE student. Through this polytechnic curriculum, I am acquiring detailed expertise regarding structural data patterns, basic Linux architectures, and code compilation pipelines.",
+                featGoalTitle: "Cybersecurity & Enterprise Security", featGoalDesc: "Continuously analyzing new cyber threat matrices, security protocols, and defensive strategies to establish myself as a highly skilled global professional is my main objective.",
+                secServicesTag: "What We Provide", secServicesTitle: "Our Services",
+                serv1Desc: "To safeguard your digital assets from threat actors, we offer premium protection protocols and absolute security fundamentals auditing setup.",
+                serv2Desc: "Elevate your corporate architecture to the peak of the global digital era by deploying ultra-modern and fully responsive web systems.",
+                serv3Desc: "Developing exceptionally high-performance, modular, and native standard mobile applications optimized perfectly for both Android and iOS systems.",
+                serv4Desc: "Reaching target consumer demographics seamlessly by establishing elite marketing tracks across global search networks and targeted Social Media frameworks.",
+                serv5Desc: "Transform raw footage components into highly engaging, dynamic, and clean commercial media clips with production-grade computational editing.",
+                serv6Desc: "Forging dynamic and highly memorable structural brand nodes, logos, and vector assets to build an authoritative visual corporate identity architecture.",
+                serv7Desc: "Deploying active endpoint code analysis pipelines, remote malware scrubbing operations, and structural defense shields to maintain live web infrastructure states.",
+                serv8Desc: "Conducting proactive penetration testing pipelines to isolate low-level software vulnerabilities and implement robust remediation blocks before exploitation occurs.",
+                scanTag: "● Global Security Database Active", scanDesc: "Input your target social media profile token string or security integrity URL endpoint. Our localized AI pipeline will automatically simulate threat vectors and calculate relative structural risk parameters.",
+                scanInput: "FB/Insta Link or Password...", scanBtn: "DEEP SCAN", secToolsTitle: "My Projects & Tools",
+                proj1Title: "Digital Salami Claim System 🌚", proj1Desc: "A highly interactive, gamified, and fun structural laboratory script designed to optimize and automate the collection sequence of festive Eid greetings.",
+                proj2Desc: "A customized interface blueprint that accurately replicates the operational financial wallet parameters to broadcast digital Eid allocations safely.",
+                proj3Title: "Premium Eid Banner Architect", proj3Desc: "An advanced graphic asset processing node that utilizes coordinate data layers to compile fully personalized and high-resolution digital media greetings.",
+                secContactTitle: "Establish Realtime Transmission Block", lblCall: "Audio Link Control", lblEmail: "Email Routing Port",
+                lblAddress: "Physical Operations Base", valAddress: "Mymensingh Sadar, Mymensingh, Bangladesh", formBtn: "Transmit Payload Packet"
+            },
+            bn: {
+                navHome: 'হোম', navFeatured: 'অবজেক্টিভ', navServices: 'সার্ভিস', navTools: 'প্রজেক্ট', navContact: 'কন্ট্যাক্ট',
+                heroGreet: "আমি", heroTitle: "ডিপ্লোমা ইন কম্পিউটার সায়েন্স অ্যান্ড টেকনোলজি স্টুডেন্ট | লিনাক্স এনথুসিয়াস্ট | সাইবার সিকিউরিটি লার্নার",
+                heroDesc: "আমি কম্পিউটার সায়েন্স অ্যান্ড টেকনোলজি বিভাগের একজন শিক্ষার্থী। লিনাক্স আর্কিটেকচার, প্রফেশনাল ওয়েব ডেভেলপমেন্ট এবং ডিফেনসিভ সাইবার সিকিউরিটি প্রোটোকল নিয়ে কাজ করতে আমি অত্যন্ত আগ্রহী।",
+                statDedication: "ডেডিকেশন লেভেল", statInstitute: "পলিটেকনিক ইনস্টিটিউট", statNode: "লার্নিং নোড",
+                secFeaturedTitle: "শিক্ষা ও ক্যারিয়ার অবজেক্টিভ", featEduDesc: "আমি একজন সিএসই (CSE) শিক্ষার্থী। এই পলিটেকনিক্যাল কারিকুলামে আমি স্ট্রাকচারাল ডাটা প্যাটার্ন, বেসিক লিনাক্স আর্কিটেকচার এবং কোড কমপাইল প্রসেস সম্পর্কে বিস্তারিত জ্ঞান লাভ করছি।",
+                featGoalTitle: "সাইবার সিকিউরিটি ও এন্টারপ্রাইজ সিকিউরিটি", featGoalDesc: "প্রতিনিয়ত নতুন সাইবার থ্রেট ম্যাট্রিক্স এবং সিকিউরিটি প্রোটোকল ও ডিফেনসিভ স্ট্র্যাটেজি অ্যানালাইসিস করে নিজেকে একজন দক্ষ গ্লোবাল প্রফেশনাল হিসেবে গড়ে তোলাই আমার প্রধান লক্ষ্য।",
+                secServicesTag: "আমরা যা প্রদান করি", secServicesTitle: "আমাদের সার্ভিসসমূহ",
+                serv1Desc: "আপনার ডিজিটাল সম্পদকে হ্যাকারদের হাত থেকে সুরক্ষিত রাখতে আমরা দিচ্ছি সর্বোচ্চ নিরাপত্তা এবং সিকিউরিটি ফান্ডামেন্টালস অডিট।",
+                serv2Desc: "আধুনিক ও রেসপন্সিভ ওয়েবসাইট তৈরির মাধ্যমে আপনার ব্যবসাকে নিয়ে যান অনলাইন বিশ্বের শীর্ষে।",
+                serv3Desc: "অ্যান্ড্রয়েড ও আইওএস প্ল্যাটফর্মের জন্য হাই-পারফরম্যান্স মোবাইল অ্যাপ্লিকেশন তৈরি করি।",
+                serv4Desc: "সোশ্যাল মিডিয়া ও গুগল অ্যাডসের মাধ্যমে আপনার টার্গেট কাস্টমারের কাছে পৌঁছাতে সাহায্য করি।",
+                serv5Desc: "প্রফেশনাল লেভেলের ভিডিও এডিটিং এর মাধ্যমে আপনার কন্টেন্টকে আকর্ষণীয় করে তুলুন।",
+                serv6Desc: "লোভনীয় লোগো ও ব্র্যান্ডিং ডিজাইনের মাধ্যমে আপনার ব্যবসার ভিজ্যুয়াল আইডেন্টিটি তৈরি করি।",
+                serv7Desc: "মালওয়্যার ক্লিনআপ এবং উন্নত সিকিউরিটি শিল্ডের মাধ্যমে আপনার সাইটকে রাখি সুরক্ষিত।",
+                serv8Desc: "পেনিտրেশন টেস্টিং এর মাধ্যমে আপনারシステムের দুর্বলতা খুঁজে বের করে সমাধান দিই।",
+                scanTag: "● গ্লোবাল সিকিউরিটি ডাটাবেস একটিভ", scanDesc: "আপনার সোশ্যাল প্রোফাইল বা যেকোনো সিকিউরিটি ইন্টিগ্রিটি ইউআরএল ইনপুট দিন। আমাদের এআই সিস্টেম স্বয়ংক্রিয়ভাবে থ্রেট ভেক্টর সিমুলেট করে রিস্ক ফ্যাক্টর অ্যানালাইসিস করবে।",
+                scanInput: "ফেসবুক/ইনস্টা লিংক অথবা পাসওয়ার্ড...", scanBtn: "ডিপ স্ক্যান", secToolsTitle: "আমার প্রজেক্ট এবং টুলস",
+                proj1Title: "সালামি নেওয়ার ডিজিটাল সিস্টেম 🌚", proj1Desc: "ঈদের সালামি আদায়ের প্রসেস সহজ করতে একটি ফান এবং ইন্টারঅ্যাক্টিভ ডিজিটাল প্ল্যাটফর্ম ল্যাব প্রজেক্ট।",
+                proj2Desc: "নগদ ওয়ালেট স্টাইলে ইনপুট ড্যাশবোর্ড ফিল্ড তৈরি করে ঈদের সালামি পাঠানোর এক্সক্লুসিভ ফান ইন্টারফেস টুল।",
+                proj3Title: "ঈদের সেরা ব্যানার ডিজাইন", proj3Desc: "ইউজার ইনপুট ও ইমেজ নোড প্রসেস ব্যবহার করে প্রফেশনাল ডিজিটাল ঈদের ব্যানার জেনারেট করার গ্রাফিকাল সリューション।",
+                secContactTitle: "সরাসরি দেখা করুন বা কথা বলুন", lblCall: "কল করুন", lblEmail: "ইমেইল করুন",
+                lblAddress: "অফিস অ্যাড্রেস", valAddress: "ময়মনসিংহ সদর, ময়মনসিংহ", formBtn: "ডেটা প্যাকেট ট্রান্সমিট করুন"
+            }
+        };
+
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langText = document.getElementById('lang-text');
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'bn' : 'en';
+            langText.innerText = currentLang === 'en' ? 'English' : 'বাংলা';
+            
+            document.getElementById('nav-home').innerText = dictionary[currentLang].navHome;
+            document.getElementById('nav-featured').innerText = dictionary[currentLang].navFeatured;
+            document.getElementById('nav-services').innerText = dictionary[currentLang].navServices;
+            document.getElementById('nav-tools').innerText = dictionary[currentLang].navTools;
+            document.getElementById('nav-contact').innerText = dictionary[currentLang].navContact;
+            document.getElementById('hero-greet').innerText = dictionary[currentLang].heroGreet;
+            document.getElementById('hero-title').innerText = dictionary[currentLang].heroTitle;
+            document.getElementById('hero-desc').innerText = dictionary[currentLang].heroDesc;
+            document.getElementById('stat-dedication').innerText = dictionary[currentLang].statDedication;
+            document.getElementById('stat-institute').innerText = dictionary[currentLang].statInstitute;
+            document.getElementById('stat-node').innerText = dictionary[currentLang].statNode;
+            document.getElementById('sec-featured-title').innerText = dictionary[currentLang].secFeaturedTitle;
+            document.getElementById('feat-edu-desc').innerText = dictionary[currentLang].featEduDesc;
+            document.getElementById('feat-goal-title').innerText = dictionary[currentLang].featGoalTitle;
+            document.getElementById('feat-goal-desc').innerText = dictionary[currentLang].featGoalDesc;
+            document.getElementById('sec-services-tag').innerText = dictionary[currentLang].secServicesTag;
+            document.getElementById('sec-services-title').innerText = dictionary[currentLang].secServicesTitle;
+            document.getElementById('serv-1-desc').innerText = dictionary[currentLang].serv1Desc;
+            document.getElementById('serv-2-desc').innerText = dictionary[currentLang].serv2Desc;
+            document.getElementById('serv-3-desc').innerText = dictionary[currentLang].serv3Desc;
+            document.getElementById('serv-4-desc').innerText = dictionary[currentLang].serv4Desc;
+            document.getElementById('serv-5-desc').innerText = dictionary[currentLang].serv5Desc;
+            document.getElementById('serv-6-desc').innerText = dictionary[currentLang].serv6Desc;
+            document.getElementById('serv-7-desc').innerText = dictionary[currentLang].serv7Desc;
+            document.getElementById('serv-8-desc').innerText = dictionary[currentLang].serv8Desc;
+            document.getElementById('scan-tag').innerText = dictionary[currentLang].scanTag;
+            document.getElementById('scan-desc').innerText = dictionary[currentLang].scanDesc;
+            document.getElementById('scan-input').placeholder = dictionary[currentLang].scanInput;
+            document.getElementById('scan-btn').innerText = dictionary[currentLang].scanBtn;
+            document.getElementById('sec-tools-title').innerText = dictionary[currentLang].secToolsTitle;
+            document.getElementById('proj-1-title').innerText = dictionary[currentLang].proj1Title;
+            document.getElementById('proj-1-desc').innerText = dictionary[currentLang].proj1Desc;
+            document.getElementById('proj-2-desc').innerText = dictionary[currentLang].proj2Desc;
+            document.getElementById('proj-3-title').innerText = dictionary[currentLang].proj3Title;
+            document.getElementById('proj-3-desc').innerText = dictionary[currentLang].proj3Desc;
+            document.getElementById('sec-contact-title').innerText = dictionary[currentLang].secContactTitle;
+            document.getElementById('lbl-call').innerText = dictionary[currentLang].lblCall;
+            document.getElementById('lbl-email').innerText = dictionary[currentLang].lblEmail;
+            document.getElementById('lbl-address').innerText = dictionary[currentLang].lblAddress;
+            document.getElementById('val-address').innerText = dictionary[currentLang].valAddress;
+            document.getElementById('form-submit-btn').innerText = dictionary[currentLang].formBtn;
+        });
+
+        // Triggering click node instantly initializes default layout as English
+        langToggleBtn.click();
+
+        // Theme Toggle Engine
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlElement = document.documentElement;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            htmlElement.classList.add('dark');
+            themeIcon.className = 'fa-solid fa-moon';
+        } else {
+            htmlElement.classList.remove('dark');
+            themeIcon.className = 'fa-solid fa-sun';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                htmlElement.classList.add('light');
+                themeIcon.className = 'fa-solid fa-sun';
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.classList.remove('light');
+                htmlElement.classList.add('dark');
+                themeIcon.className = 'fa-solid fa-moon';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Global Mouse Aura Engine
+        const aura = document.getElementById('mouse-aura');
+        let currentX = 0, currentY = 0;
+        let targetX = 0, targetY = 0;
+        
+        window.addEventListener('mousemove', (e) => {
+            targetX = e.clientX;
+            targetY = e.clientY;
+        });
+
+        function updateAuraPosition() {
+            currentX += (targetX - currentX) * 0.45; 
+            currentY += (targetY - currentY) * 0.45;
+            aura.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
+            requestAnimationFrame(updateAuraPosition);
+        }
+        updateAuraPosition();
+
+        // 1. INSIDE SCANNER BANNER MOUSE TRACER
+        const bannerContainer = document.getElementById('glow-banner-container');
+        const bannerSpotlight = document.getElementById('banner-spotlight');
+        bannerContainer.addEventListener('mousemove', (e) => {
+            const rect = bannerContainer.getBoundingClientRect();
+            bannerSpotlight.style.left = (e.clientX - rect.left) + 'px';
+            bannerSpotlight.style.top = (e.clientY - rect.top) + 'px';
+        });
+
+        // 2. INSIDE PROJECTS SECTION MOUSE TRACER
+        const projectsContainer = document.getElementById('glow-projects-container');
+        const projectsSpotlight = document.getElementById('projects-spotlight');
+        projectsContainer.addEventListener('mousemove', (e) => {
+            const rect = projectsContainer.getBoundingClientRect();
+            projectsSpotlight.style.left = (e.clientX - rect.left) + 'px';
+            projectsSpotlight.style.top = (e.clientY - rect.top) + 'px';
+        });
+
+        // 3. REALTIME DIGITAL CLOCK UTILITY ENGINE
+        function runLiveClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            const formattedHours = String(hours).padStart(2, '0');
+
+            document.getElementById('live-clock').innerText = `${formattedHours}:${minutes}:${seconds} ${ampm}`;
+        }
+        setInterval(runLiveClock, 1000);
+        runLiveClock();
+
+        // 4. REALTIME SIMULATED VISITOR COUNTER LAYER ENGINE
+        function updateLiveVisitors() {
+            const dynamicCount = Math.floor(Math.random() * (18 - 6 + 1)) + 6;
+            document.getElementById('visitor-counter').innerText = `${dynamicCount} Active Visitor`;
+        }
+        setInterval(updateLiveVisitors, 4500); 
+        updateLiveVisitors();
+
+        // Async Contact Data Hooks
+        document.getElementById('cyberContactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('form-submit-btn');
+            const payload = {
+                name: document.getElementById('formName').value,
+                email: document.getElementById('formEmail').value,
+                message: document.getElementById('formMessage').value
+            };
+            submitBtn.innerText = currentLang === 'en' ? "Transmitting Packet..." : "ডেটা ট্রান্সমিট হচ্ছে...";
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                if (data.success) {
+                    alert(currentLang === 'en' ? `[TRANSMISSION SUCCESS]: Payload registered smoothly.` : `[ট্রান্সমিশন সফল]: আপনার ডেটা রেজিস্টার্ড হয়েছে।`);
+                    document.getElementById('cyberContactForm').reset();
+                } else {
+                    alert(`[GATEWAY ERROR]: ${data.error}`);
+                }
+            } catch (error) {
+                alert(currentLang === 'en' ? "[SYSTEM FAILURE] Connection refused." : "[সিস্টেম এরর] সার্ভার কানেকশন রিফিউজড।");
+            } finally {
+                submitBtn.innerText = dictionary[currentLang].formBtn;
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

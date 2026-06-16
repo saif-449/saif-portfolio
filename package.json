@@ -1,0 +1,14 @@
+{
+  "name": "saif-khan-premium-portfolio",
+  "version": "2.0.0",
+  "description": "Premium Cyber-Aesthetic Full-Stack Portfolio for Saif Khan",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "author": "Saif Khan",
+  "license": "MIT"
+}
