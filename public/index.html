@@ -1,682 +1,948 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saif Khan | Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- AOS CSS For Ultra Smooth Scroll Animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-          darkMode: 'class',
-          theme: {
-            extend: {
-              colors: {
-                brand: {
-                  blue: '#2563eb',
-                  indigo: '#4f46e5',
-                  dark: '#0f172a',
-                  lightBg: '#f8fafc'
-                }
-              },
-              fontFamily: {
-                sans: ['Plus Jakarta Sans', 'sans-serif'],
-                bengali: ['Noto Serif Bengali', 'serif'],
-              },
-              boxShadow: {
-                'premium': '0 10px 30px -5px rgba(0, 0, 0, 0.03), 0 20px 40px -10px rgba(0, 0, 0, 0.02)',
-                'premium-hover': '0 20px 40px -5px rgba(37, 99, 235, 0.15)',
-                'blue-glow': '0 15px 30px -5px rgba(37, 99, 235, 0.3)',
-              }
-            }
-          }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.5s ease, color 0.5s ease; }
-        
-        /* Universal Screen-Relative Fixed Background Aura */
-        #mouse-aura {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.10) 0%, rgba(59, 130, 246, 0.02) 40%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0; 
-            mix-blend-mode: multiply; 
-            will-change: transform;
-            transform: translate3d(-50%, -50%, 0);
-        }
-        
-        html.dark #mouse-aura {
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(79, 70, 229, 0.04) 45%, transparent 70%);
-            mix-blend-mode: screen;
-        }
-
-        /* Dark Container Fluid Spot Tracking Style */
-        .dark-container-glow {
-            position: relative;
-            overflow: hidden;
-        }
-        .container-cursor-spot {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(59, 130, 246, 0.06) 35%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            will-change: top, left;
-        }
-        .dark-container-glow:hover .container-cursor-spot {
-            opacity: 1;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saif Khan | Professional Cybersecurity Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+tailwind.config = {
+darkMode: 'class',
+theme: {
+extend: {
+colors: {
+brand: {
+blue: '#3b82f6',
+indigo: '#6366f1',
+dark: '#0f172a',
+cyber: '#10b981'
+}
+},
+fontFamily: {
+sans: ['Plus Jakarta Sans', 'sans-serif'],
+bengali: ['Noto Serif Bengali', 'serif'],
+mono: ['Fira Code', 'monospace']
+},
+boxShadow: {
+'premium': '0 10px 30px -5px rgba(0, 0, 0, 0.03), 0 20px 40px -10px rgba(0, 0, 0, 0.02)',
+'premium-hover': '0 20px 40px -5px rgba(37, 99, 235, 0.15)',
+'blue-glow': '0 15px 30px -5px rgba(59, 130, 246, 0.4)',
+'cyber-glow': '0 15px 30px -5px rgba(16, 185, 129, 0.3)',
+}
+}
+}
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.5s ease, color 0.5s ease; }
+#mouse-aura {
+position: fixed;
+top: 0;
+left: 0;
+width: 600px;
+height: 600px;
+background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
+border-radius: 50%;
+pointer-events: none;
+z-index: 0;
+will-change: transform;
+transform: translate3d(-50%, -50%, 0);
+}
+html.dark #mouse-aura {
+background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
+}
+.active-nav { color: #3b82f6 !important; font-weight: 700; }
+html.dark .active-nav { color: #10b981 !important; }
+.typed-cursor { opacity: 1; animation: blink 0.7s infinite; }
+@keyframes blink { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+</style>
 </head>
 <body class="bg-[#f8fafc] dark:bg-[#030712] text-brand-dark dark:text-slate-100 antialiased selection:bg-brand-blue selection:text-white relative overflow-x-hidden">
 
-    <!-- Universal Background Aura -->
-    <div id="mouse-aura"></div>
+<div id="page-loader" class="fixed inset-0 bg-[#050b18] z-[9999] flex flex-col justify-center items-center font-mono text-xs text-brand-cyber space-y-2 select-none">
+<div class="w-12 h-12 border-2 border-brand-cyber border-t-transparent rounded-full animate-spin mb-4"></div>
+<div id="loader-text-1" class="opacity-0 transition-opacity duration-300">&gt; Initializing Security Environment...</div>
+<div id="loader-text-2" class="opacity-0 transition-opacity duration-300">&gt; Loading Modules & Toolkits...</div>
+<div id="loader-text-3" class="opacity-0 transition-opacity duration-300">&gt; Connecting to Secure Shell...</div>
+</div>
 
-    <!-- FIXED FLOATING LIVE MONITOR WIDGET -->
-    <div class="fixed bottom-6 left-6 z-50 space-y-2 pointer-events-auto select-none font-mono text-[10px] font-bold tracking-wider uppercase hidden sm:block">
-        <!-- Active Visitor Floating Badge -->
-        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200/50 dark:border-slate-800/50 shadow-premium backdrop-blur-md text-slate-600 dark:text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span id="visitor-counter">12 Active Visitor</span>
-        </div>
-        <!-- Live Server Time Badge -->
-        <div class="flex items-center gap-2 px-3 py-2 rounded-full bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200/50 dark:border-slate-800/50 shadow-premium backdrop-blur-md text-slate-800 dark:text-slate-200 min-w-[130px]">
-            <span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>
-            <span id="live-clock">00:00:00 PM</span>
-            <span class="text-[8px] opacity-50 dark:opacity-40">LST</span>
-        </div>
-    </div>
+<div id="toast-notification" class="fixed top-24 right-6 z-[999] transform translate-x-80 opacity-0 transition-all duration-500 ease-out flex items-center gap-3 bg-slate-900 border border-brand-cyber text-white px-5 py-4 rounded-xl shadow-cyber-glow font-mono text-xs">
+<i class="fa-solid fa-square-check text-brand-cyber text-lg animate-bounce"></i>
+<div>
+<span class="font-bold text-brand-cyber block">[TRANSMISSION SUCCESS]</span>
+<span id="toast-msg">Message Sent Successfully</span>
+</div>
+</div>
 
-    <!-- Header Fixed Navigation -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-white/70 dark:bg-[#030712]/70 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 px-6 lg:px-16 py-4 flex justify-between items-center transition-all duration-300">
-        <a href="#home" class="text-xl font-extrabold tracking-tight text-brand-blue hover:scale-105 transition-transform duration-300">
-            Saif Khan<span class="text-brand-indigo">.</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600 dark:text-slate-400">
-            <a href="#home" id="nav-home" class="hover:text-brand-blue dark:hover:text-brand-blue capitalize transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue hover:after:w-full after:transition-all duration-300">Home</a>
-            <a href="#featured" id="nav-featured" class="hover:text-brand-blue dark:hover:text-brand-blue capitalize transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue hover:after:w-full after:transition-all duration-300">Featured</a>
-            <a href="#services" id="nav-services" class="hover:text-brand-blue dark:hover:text-brand-blue capitalize transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue hover:after:w-full after:transition-all duration-300">Services</a>
-            <a href="#tools" id="nav-tools" class="hover:text-brand-blue dark:hover:text-brand-blue capitalize transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue hover:after:w-full after:transition-all duration-300">Tools</a>
-            <a href="#contact" id="nav-contact" class="hover:text-brand-blue dark:hover:text-brand-blue capitalize transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-blue hover:after:w-full after:transition-all duration-300">Contact</a>
-        </nav>
-        
-        <div class="flex items-center gap-3">
-            <button id="theme-toggle" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-amber-400 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-300 active:scale-90">
-                <i id="theme-icon" class="fa-solid fa-sun text-base"></i>
-            </button>
-            <button id="lang-toggle" class="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-all duration-300 active:scale-95">
-                <i class="fa-solid fa-language text-sm"></i> <span id="lang-text">English</span>
-            </button>
-        </div>
-    </header>
+<button id="back-to-top" class="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-xl bg-brand-blue dark:bg-brand-cyber text-white dark:text-brand-dark flex items-center justify-center shadow-lg transform translate-y-24 opacity-0 transition-all duration-500 hover:-translate-y-1 active:scale-95">
+<i class="fa-solid fa-arrow-up text-base"></i>
+</button>
 
-    <!-- Hero / Intro Section -->
-    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 relative z-10 bg-transparent">
-        <div class="max-w-4xl mx-auto space-y-6" data-aos="fade-up" data-aos-duration="1000">
-            <h1 class="text-4xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
-                <span id="hero-greet" class="font-sans font-bold text-slate-800 dark:text-slate-200">Hi, I am</span> 
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-indigo">Saif Khan</span>
-            </h1>
-            <p id="hero-title" class="text-base lg:text-xl text-slate-600 dark:text-slate-400 font-medium max-w-2xl mx-auto font-mono">// CSE STUDENT & CYBER LEARNER</p>
-            <p id="hero-desc" class="text-sm lg:text-base text-slate-500 dark:text-slate-400 max-w-xl mx-auto font-light leading-relaxed">
-                I am a Diploma in Computer Science & Technology student with a strong interest in Linux, Web Development and Cybersecurity.
-            </p>
+<div id="mouse-aura"></div>
 
-            <!-- Social Links Panel -->
-            <div class="flex justify-center gap-4 pt-4" data-aos="zoom-in" data-aos-delay="300">
-                <a href="https://github.com/Alvi01719" target="_blank" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-500"><i class="fa-brands fa-github text-lg"></i></a>
-                <a href="https://www.linkedin.com/in/saif-khan-34ba4a24b" target="_blank" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-500"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
-                <a href="https://www.facebook.com/Saif449" target="_blank" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-500"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-                <a href="https://www.instagram.com/alvi_ahmed_saif" target="_blank" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-500"><i class="fa-brands fa-instagram text-lg"></i></a>
-                <a href="https://x.com/AlviahmedS10297" target="_blank" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-500"><i class="fa-brands fa-x-twitter text-lg"></i></a>
-            </div>
+<div class="fixed bottom-6 left-6 z-50 space-y-2 pointer-events-auto select-none font-mono text-[10px] font-bold tracking-wider uppercase hidden sm:block">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200/50 dark:border-slate-800/50 shadow-premium backdrop-blur-md text-slate-600 dark:text-slate-400">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span id="visitor-counter">14 Active Monitors</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-2 rounded-full bg-white/80 dark:bg-[#0b1329]/80 border border-slate-200/50 dark:border-slate-800/50 shadow-premium backdrop-blur-md text-slate-800 dark:text-slate-200 min-w-[130px]">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-blue dark:bg-brand-cyber"></span>
+<span id="live-clock">00:00:00 PM</span>
+<span class="text-[8px] opacity-50">LST</span>
+</div>
+</div>
 
-            <!-- Stats Showcase Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12 max-w-3xl mx-auto w-full" data-aos="fade-up" data-aos-delay="500">
-                <div class="p-6 rounded-2xl bg-brand-blue text-white shadow-blue-glow text-center transform hover:scale-[1.03] transition-all duration-500">
-                    <h3 class="text-3xl font-bold">100%+</h3>
-                    <p id="stat-dedication" class="text-xs opacity-80 mt-1">Dedication Level</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-white border border-slate-100 dark:bg-[#0b1329] dark:border-slate-800 shadow-premium text-center transform hover:scale-[1.03] hover:shadow-premium-hover transition-all duration-500">
-                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white">Mymensingh</h3>
-                    <p id="stat-institute" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Polytechnic Institute</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-white border border-slate-100 dark:bg-[#0b1329] dark:border-slate-800 shadow-premium text-center transform hover:scale-[1.03] hover:shadow-premium-hover transition-all duration-500">
-                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white">Active</h3>
-                    <p id="stat-node" class="text-xs text-slate-500 dark:text-slate-400 mt-1">Learning Node</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<header class="fixed top-0 left-0 w-full z-50 bg-white/70 dark:bg-[#030712]/70 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 px-6 lg:px-16 py-4 flex justify-between items-center transition-all duration-300">
+<a href="#home" class="text-xl font-extrabold tracking-tight text-brand-blue dark:text-brand-cyber">
+Saif Khan<span class="text-brand-indigo">.</span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600 dark:text-slate-400">
+<a href="#home" id="nav-home" class="nav-link transition-colors">Home</a>
+<a href="#projects" id="nav-projects" class="nav-link transition-colors">Projects</a>
+<a href="#certifications" id="nav-certifications" class="nav-link transition-colors">Certifications</a>
+<a href="#skills" id="nav-skills" class="nav-link transition-colors">Skills</a>
+<a href="#roadmap" id="nav-roadmap" class="nav-link transition-colors">Roadmap</a>
+<a href="#services" id="nav-services" class="nav-link transition-colors">Services</a>
+<a href="#contact" id="nav-contact" class="nav-link transition-colors">Contact</a>
+</nav>
+<div class="flex items-center gap-3">
+<button id="theme-toggle" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-amber-400 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-all duration-300">
+<i id="theme-icon" class="fa-solid fa-sun text-base"></i>
+</button>
+<button id="lang-toggle" class="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-all duration-300">
+<i class="fa-solid fa-language text-sm"></i> <span id="lang-text">English</span>
+</button>
+</div>
+</header>
 
-    <!-- Education & Goal Section -->
-    <section id="featured" class="py-24 bg-transparent border-t border-slate-100 dark:border-slate-800/40 relative z-10 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center space-y-2 mb-16" data-aos="fade-up">
-                <h2 id="sec-featured-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Education & Career Objective</h2>
-                <div class="w-12 h-1 bg-brand-blue mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-                <!-- Box 1 -->
-                <div class="p-8 rounded-3xl bg-white/60 dark:bg-[#0b1329]/40 border border-slate-200/50 dark:border-slate-800/50 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue hover:text-white dark:hover:bg-brand-blue transition-all duration-500 ease-in-out space-y-4 group" data-aos="fade-right" data-aos-duration="800">
-                    <span class="text-xs font-bold text-brand-indigo tracking-wider uppercase font-mono group-hover:text-white/80 dark:text-brand-blue">// EDUCATION_CORE</span>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-white transition-colors duration-500">Diploma in Computer Science & Technology</h3>
-                    <p class="text-slate-600 dark:text-slate-300 font-medium group-hover:text-white/90 transition-colors duration-500">Mymensingh Polytechnic Institute</p>
-                    <p id="feat-edu-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-200/60 dark:border-slate-800/60 group-hover:text-white/80 group-hover:border-white/20 transition-all duration-500">
-                        I am a CSE student. Through this polytechnic curriculum, I am acquiring detailed expertise regarding structural data patterns, basic Linux architectures, and code compilation pipelines.
-                    </p>
-                </div>
-                <!-- Box 2 (100% SECURE INNER QUOTE EMBEDMENT NODE) -->
-                <div class="p-8 rounded-3xl bg-white/60 dark:bg-[#0b1329]/40 border border-slate-200/50 dark:border-slate-800/50 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue hover:text-white dark:hover:bg-brand-blue transition-all duration-500 ease-in-out space-y-4 flex flex-col justify-between group" data-aos="fade-left" data-aos-duration="800">
-                    <div>
-                        <span class="text-xs font-bold text-brand-blue tracking-wider uppercase font-mono group-hover:text-white/80 transition-colors duration-500">// CAREER_GOAL</span>
-                        <h3 id="feat-goal-title" class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-white transition-colors duration-500">Cybersecurity & Enterprise Security</h3>
-                    </div>
-                    <!-- Fixed quote block to stay consistently readable in light/dark transitions without overlay locks -->
-                    <div class="text-sm text-slate-600 dark:text-slate-300 border-l-4 border-brand-blue pl-4 my-4 py-2 group-hover:text-white group-hover:border-white transition-all duration-500">
-                        <p class="italic font-medium">"My goal is to become a skilled Cybersecurity Professional and continuously improve my technical expertise."</p>
-                    </div>
-                    <p id="feat-goal-desc" class="text-sm text-slate-500 dark:text-slate-400 group-hover:text-white/80 transition-colors duration-500">
-                        Continuously analyzing new cyber threat matrices, security protocols, and defensive strategies to establish myself as a highly skilled global professional is my main objective.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 relative z-10 bg-transparent">
+<div class="max-w-4xl mx-auto space-y-6" data-aos="fade-up" data-aos-duration="1000">
+<h1 class="text-4xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
+<span id="hero-greet" class="font-sans font-bold text-slate-800 dark:text-slate-200">Hi, I am</span>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-cyber dark:from-brand-cyber dark:to-brand-indigo">Saif Khan</span>
+</h1>
+<div class="h-8 text-lg lg:text-2xl text-brand-blue dark:text-brand-cyber font-mono font-semibold">
+<span id="typewriter"></span><span class="typed-cursor">|</span>
+</div>
+<p id="hero-desc" class="text-sm lg:text-base text-slate-500 dark:text-slate-400 max-w-xl mx-auto font-light leading-relaxed">
+I am a Diploma in Computer Science & Technology student at Mymensingh Polytechnic Institute with a deep passion for Linux enterprise architecture, advanced web systems development, and defensive cybersecurity mechanics.
+</p>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 bg-transparent border-t border-slate-200/50 dark:border-slate-800/40 relative z-10">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center space-y-2 mb-16" data-aos="fade-up">
-                <span id="sec-services-tag" class="text-xs font-semibold text-brand-blue uppercase tracking-wider block">What We Provide</span>
-                <h2 id="sec-services-title" class="text-3xl lg:text-5xl font-extrabold text-slate-900 dark:text-white">Our Services</h2>
-                <div class="w-16 h-1 bg-brand-blue mx-auto rounded-full mt-2"></div>
-            </div>
+<div class="flex flex-wrap justify-center gap-3 pt-2 max-w-md mx-auto" data-aos="zoom-in" data-aos-delay="200">
+<a href="https://github.com/Alvi01719" target="_blank" title="GitHub" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue dark:hover:text-brand-cyber hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-github text-lg"></i></a>
+<a href="https://www.linkedin.com/in/saif-khan-34ba4a24b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" title="LinkedIn" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-blue dark:hover:text-brand-cyber hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+<a href="https://www.facebook.com/Saif449" target="_blank" title="Facebook" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-blue-600 hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+<a href="https://www.instagram.com/alvi_ahmed_saif?igsh=aHh2a2prbjYwYXl4" target="_blank" title="Instagram" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-pink-500 hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-instagram text-lg"></i></a>
+<a href="https://tryhackme.com" target="_blank" title="TryHackMe" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-red-500 hover:-translate-y-1 transition-all duration-300"><i class="fa-solid fa-cube text-lg"></i></a>
+<a href="https://hackthebox.com" target="_blank" title="HackTheBox" class="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-premium border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-green-500 hover:-translate-y-1 transition-all duration-300"><i class="fa-solid fa-terminal text-lg"></i></a>
+</div>
 
-            <!-- Grid Layout -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Card 1: Cyber Security -->
-                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="50">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Cyber Security</h3>
-                    <p id="serv-1-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">To safeguard your digital assets from threat actors, we offer premium protection protocols and absolute security fundamentals auditing setup.</p>
-                </div>
+<div class="pt-4">
+<a href="#" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue to-brand-indigo dark:from-brand-cyber dark:to-emerald-600 text-white font-semibold text-xs px-6 py-3.5 rounded-xl shadow-blue-glow dark:shadow-cyber-glow hover:opacity-95 transition-all active:scale-95">
+<i class="fa-solid fa-file-arrow-down"></i> Download Resume / CV
+</a>
+</div>
+</div>
+</section>
 
-                <!-- Card 2: Web Developing -->
-                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Web Developing</h3>
-                    <p id="serv-2-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Elevate your corporate architecture to the peak of the global digital era by deploying ultra-modern and fully responsive web systems.</p>
-                </div>
+<section class="max-w-3xl mx-auto px-6 mb-24 relative z-10" data-aos="fade-up">
+<div class="w-full bg-[#050b18] border border-slate-800 rounded-2xl shadow-2xl overflow-hidden font-mono text-xs text-slate-300">
+<div class="bg-[#0f172a] border-b border-slate-800 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-red-500 block"></span>
+<span class="w-3 h-3 rounded-full bg-yellow-500 block"></span>
+<span class="w-3 h-3 rounded-full bg-green-500 block"></span>
+</div>
+<div class="text-slate-500 text-[11px]">saif@linux:~</div>
+<div></div>
+</div>
+<div class="p-6 space-y-4 leading-relaxed">
+<div>
+<span class="text-brand-cyber">saif@linux:~$</span> <span class="text-white">whoami</span>
+<p class="text-slate-400 mt-1">Cyber Security Learner & Web Developer</p>
+</div>
+<div>
+<span class="text-brand-cyber">saif@linux:~$</span> <span class="text-white">uname -a</span>
+<p class="text-slate-400 mt-1">Linux Enthusiast | Enterprise Hardening Protocol Active</p>
+</div>
+<div>
+<span class="text-brand-cyber">saif@linux:~$</span> <span class="text-white">systemctl status engineering</span>
+<p class="text-emerald-400 mt-1">● active (running) since always</p>
+<p class="text-slate-500">Task Node: Always Learning...</p>
+</div>
+</div>
+</div>
+</section>
 
-                <!-- Card 3: App Developing -->
-                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                    </div>
-                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">App Developing</h3>
-                    <p id="serv-3-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Developing exceptionally high-performance, modular, and native standard mobile applications optimized perfectly for both Android and iOS systems.</p>
-                </div>
+<section class="py-24 bg-white dark:bg-[#070d1e] border-y border-slate-200/50 dark:border-slate-800/50 relative z-10">
+<div class="max-w-4xl mx-auto px-6">
+<div class="text-center space-y-2 mb-16" data-aos="fade-up">
+<h2 id="sec-timeline-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Professional Journey</h2>
+<div class="w-12 h-1 bg-brand-blue dark:bg-brand-cyber mx-auto rounded-full"></div>
+</div>
 
-                <!-- Card 4: Digital Marketing -->
-                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
-                        <i class="fa-solid fa-paste"></i>
-                    </div>
-                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Digital Marketing</h3>
-                    <p id="serv-4-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Reaching target consumer demographics seamlessly by establishing elite marketing tracks across global search networks and targeted Social Media frameworks.</p>
-                </div>
+<div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-32 space-y-12">
+<div class="relative pl-8" data-aos="fade-up">
+<span class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-brand-blue dark:bg-brand-cyber border-4 border-white dark:border-[#070d1e]"></span>
+<span class="absolute left-[-110px] top-0 hidden md:block font-mono font-bold text-lg text-brand-blue dark:text-brand-cyber">2023</span>
+<h3 class="text-base font-bold text-slate-900 dark:text-white md:hidden">2023 - Started Linux Journey</h3>
+<h3 class="text-base font-bold text-slate-900 dark:text-white hidden md:block">Started Linux Journey</h3>
+<p id="timeline-desc-1" class="text-xs text-slate-500 dark:text-slate-400 font-bengali mt-1">শেল স্ক্রিপ্টিং, কার্নেল আর্কিটেকচার এবং ওপেন সোর্স সিস্টেম এনভায়রনমেন্টের গভীর বিশ্লেষণ শুরু।</p>
+</div>
+<div class="relative pl-8" data-aos="fade-up">
+<span class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-brand-blue dark:bg-brand-cyber border-4 border-white dark:border-[#070d1e]"></span>
+<span class="absolute left-[-110px] top-0 hidden md:block font-mono font-bold text-lg text-brand-blue dark:text-brand-cyber">2024</span>
+<h3 class="text-base font-bold text-slate-900 dark:text-white md:hidden">2024 - Web Development</h3>
+<h3 class="text-base font-bold text-slate-900 dark:text-white hidden md:block">Web Development Focus</h3>
+<p id="timeline-desc-2" class="text-xs text-slate-500 dark:text-slate-400 font-bengali mt-1">ফুল-স্ট্যাক ওয়ের অ্যাপ্লিকেশন আর্কিটেকচার, জাভাস্ক্রিপ্ট ইঞ্জিন এবং এপিআই ইন্টিগ্রেশন প্রোটোকল তৈরি।</p>
+</div>
+<div class="relative pl-8" data-aos="fade-up">
+<span class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-brand-blue dark:bg-brand-cyber border-4 border-white dark:border-[#070d1e]"></span>
+<span class="absolute left-[-110px] top-0 hidden md:block font-mono font-bold text-lg text-brand-blue dark:text-brand-cyber">2025</span>
+<h3 class="text-base font-bold text-slate-900 dark:text-white md:hidden">2025 - Cyber Security Learning</h3>
+<h3 class="text-base font-bold text-slate-900 dark:text-white hidden md:block">Cyber Security Deep Dive</h3>
+<p id="timeline-desc-3" class="text-xs text-slate-500 dark:text-slate-400 font-bengali mt-1">পেনিট্রেশন টেস্টিং ল্যাবস, ইনফরমেশন সিকিউরিটি ফ্রেমওয়ার্ক এবং ক্রিপ্টোগ্রাফিক প্রোটোকল লার্নিং নোড।</p>
+</div>
+<div class="relative pl-8" data-aos="fade-up">
+<span class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-brand-blue dark:bg-brand-cyber border-4 border-white dark:border-[#070d1e]"></span>
+<span class="absolute left-[-110px] top-0 hidden md:block font-mono font-bold text-lg text-brand-blue dark:text-brand-cyber">2026</span>
+<h3 class="text-base font-bold text-slate-900 dark:text-white md:hidden">2026 - Building Security Projects</h3>
+<h3 class="text-base font-bold text-slate-900 dark:text-white hidden md:block">Building Security Projects</h3>
+<p id="timeline-desc-4" class="text-xs text-slate-500 dark:text-slate-400 font-bengali mt-1">রিয়েল-ওয়ার্ল্ড সিকিউরিটি অটোমেশন স্ক্রিপ্ট, থ্রেট হান্টিং টুলস এবং ভালনারেবিলিটি ব্লকিং ইঞ্জিন তৈরি।</p>
+</div>
+</div>
+</div>
+</section>
 
-                <!-- Card 5: Video Editing -->
-                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="250">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
-                        <i class="fa-solid fa-film"></i>
-                    </div>
-                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Video Editing</h3>
-                    <p id="serv-5-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Transform raw footage components into highly engaging, dynamic, and clean commercial media clips with production-grade computational editing.</p>
-                </div>
+<section id="roadmap" class="py-24 bg-transparent relative z-10">
+<div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+<div class="p-8 rounded-3xl bg-white dark:bg-[#0b1329]/40 border border-slate-200/60 dark:border-slate-800/60 shadow-premium" data-aos="fade-right">
+<div class="flex items-center gap-2 text-brand-blue dark:text-brand-cyber font-mono text-xs font-bold uppercase tracking-wider mb-6">
+<span class="w-2 h-2 rounded-full bg-brand-cyber animate-ping"></span> // Active Study Matrix
+</div>
+<h3 id="sec-learning-title" class="text-xl font-extrabold text-slate-900 dark:text-white mb-6">Currently Learning</h3>
+<ul class="space-y-3.5 text-xs text-slate-600 dark:text-slate-300 font-medium font-mono">
+<li class="flex items-center gap-3"><i class="fa-solid fa-angles-right text-brand-cyber text-[10px]"></i> Linux Hardening & Enterprise Policies</li>
+<li class="flex items-center gap-3"><i class="fa-solid fa-angles-right text-brand-cyber text-[10px]"></i> SOC Operations & Threat Hunting</li>
+<li class="flex items-center gap-3"><i class="fa-solid fa-angles-right text-brand-cyber text-[10px]"></i> Burp Suite Professional Web Hacking</li>
+<li class="flex items-center gap-3"><i class="fa-solid fa-angles-right text-brand-cyber text-[10px]"></i> Network Security & Advanced Tunnel Traffic</li>
+<li class="flex items-center gap-3"><i class="fa-solid fa-angles-right text-brand-cyber text-[10px]"></i> Python Defensive Automation Systems</li>
+</ul>
+</div>
 
-                <!-- Card 6: Graphics Design -->
-                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
-                        <i class="fa-solid fa-pen-nib"></i>
-                    </div>
-                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Graphics Design</h3>
-                    <p id="serv-6-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Forging dynamic and highly memorable structural brand nodes, logos, and vector assets to build an authoritative visual corporate identity architecture.</p>
-                </div>
+<div class="p-8 rounded-3xl bg-white dark:bg-[#0b1329]/40 border border-slate-200/60 dark:border-slate-800/60 shadow-premium flex flex-col justify-between" data-aos="fade-left">
+<div>
+<div class="text-slate-400 font-mono text-xs font-bold uppercase tracking-wider mb-6">// Target Milestones Grid</div>
+<h3 id="sec-roadmap-title" class="text-xl font-extrabold text-slate-900 dark:text-white mb-6">Cybersecurity Roadmap</h3>
+</div>
+<div class="grid grid-cols-2 gap-4 text-xs font-mono">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-emerald-500"><i class="fa-solid fa-square-check"></i> <span>Linux Fundamentals</span></div>
+<div class="flex items-center gap-2 text-emerald-500"><i class="fa-solid fa-square-check"></i> <span>Networking Layer</span></div>
+<div class="flex items-center gap-2 text-emerald-500"><i class="fa-solid fa-square-check"></i> <span>Web Security Core</span></div>
+</div>
+<div class="space-y-2 border-l border-slate-200 dark:border-slate-800 pl-4">
+<div class="flex items-center gap-2 text-brand-blue dark:text-brand-cyber"><i class="fa-solid fa-circle-arrow-right"></i> <span>eJPT Certification</span></div>
+<div class="flex items-center gap-2 text-slate-400"><i class="fa-solid fa-ellipsis"></i> <span>PNPT Blueprint</span></div>
+<div class="flex items-center gap-2 text-slate-400"><i class="fa-solid fa-bullseye text-red-500"></i> <span class="font-bold">OSCP Mastery Target</span></div>
+</div>
+</div>
+</div>
+</section>
 
-                <!-- Card 7: Website Security -->
-                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="350">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
-                        <i class="fa-solid fa-lock"></i>
-                    </div>
-                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Website Security</h3>
-                    <p id="serv-7-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Deploying active endpoint code analysis pipelines, remote malware scrubbing operations, and structural defense shields to maintain live web infrastructure states.</p>
-                </div>
+<section id="projects" class="py-24 bg-transparent relative z-10">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center space-y-2 mb-16" data-aos="fade-up">
+<h2 id="sec-projects-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Cybersecurity Tools & Projects</h2>
+<div class="w-12 h-1 bg-brand-blue dark:bg-brand-cyber mx-auto rounded-full"></div>
+</div>
 
-                <!-- Card 8: Ethical Hacking -->
-                <div class="p-8 rounded-[32px] bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue dark:hover:bg-brand-blue hover:-translate-y-1 transform transition-all duration-300 group relative z-30" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue text-xl group-hover:bg-white/10 group-hover:border-white/10 group-hover:text-white transition-all duration-500 ease-in-out mb-6">
-                        <i class="fa-solid fa-key"></i>
-                    </div>
-                    <h3 class="text-xl font-bold dark:text-slate-100 group-hover:text-white transition-colors duration-500 ease-in-out mb-3">Ethical Hacking</h3>
-                    <p id="serv-8-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed group-hover:text-white/90 transition-colors duration-500 ease-in-out">Conducting proactive penetration testing pipelines to isolate low-level software vulnerabilities and implement robust remediation blocks before exploitation occurs.</p>
-                </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<script>
+const realProjects = [
+{ icon: 'fa-network-wired', title: 'Port Scanner', descId: 'p-desc-1', git: '#', live: '#', stack: ['Python', 'Sockets', 'CLI'] },
+{ icon: 'fa-key', title: 'Password Generator', descId: 'p-desc-2', git: '#', live: '#', stack: ['Crypto', 'Python', 'Tkinter'] },
+{ icon: 'fa-shield-heart', title: 'Password Strength Checker', descId: 'p-desc-3', git: '#', live: '#', stack: ['RegEx', 'JavaScript', 'Tailwind'] },
+{ icon: 'fa-magnifying-glass-location', title: 'Subdomain Finder', descId: 'p-desc-4', git: '#', live: '#', stack: ['AsyncIO', 'DNS-API', 'Python'] },
+{ icon: 'fa-radar', title: 'Network Scanner', descId: 'p-desc-5', git: '#', live: '#', stack: ['Scapy', 'ARP-Route', 'Linux'] },
+{ icon: 'fa-file-shield', title: 'Log Analyzer', descId: 'p-desc-6', git: '#', live: '#', stack: ['Regex-Match', 'Bash', 'Cron'] },
+{ icon: 'fa-gears', title: 'Linux Automation Script', descId: 'p-desc-7', git: '#', live: '#', stack: ['Shell-Script', 'Hardening', 'Sysctl'] },
+{ icon: 'fa-bug', title: 'Web Vulnerability Scanner', descId: 'p-desc-8', git: '#', live: '#', stack: ['BeautifulSoup', 'Requests', 'Flask'] }
+];
+realProjects.forEach((p, index) => {
+document.write(`
+<div class="group relative p-6 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/50 dark:border-slate-800/50 shadow-premium hover:shadow-premium-hover hover:border-brand-blue dark:hover:border-brand-cyber transition-all duration-300 flex flex-col justify-between overflow-hidden" data-aos="fade-up" data-aos-delay="${index * 30}">
+<div class="absolute inset-0 bg-slate-950/90 z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 flex flex-col justify-center items-center text-center space-y-4">
+<span class="text-brand-cyber font-mono text-xs uppercase tracking-widest font-bold">Project Architecture</span>
+<div class="flex flex-wrap gap-2 justify-center">
+${p.stack.map(tech => `<span class="bg-slate-800 border border-slate-700 px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">${tech}</span>`).join('')}
+</div>
+</div>
+<div class="space-y-3 relative z-10">
+<div class="w-10 h-10 rounded-xl bg-brand-blue/10 dark:bg-brand-cyber/10 flex items-center justify-center text-brand-blue dark:text-brand-cyber text-base"><i class="fa-solid ${p.icon}"></i></div>
+<h4 class="font-bold text-base text-slate-900 dark:text-white">${p.title}</h4>
+<p id="${p.descId}" class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-bengali"></p>
+</div>
+<div class="flex gap-2 justify-end pt-4 border-t border-slate-100 dark:border-slate-800/60 mt-4 relative z-30">
+<a href="${p.git}" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-blue hover:text-white dark:hover:bg-brand-cyber dark:hover:text-brand-dark text-slate-700 dark:text-slate-300 font-mono text-[11px] font-medium rounded-lg transition-all flex items-center gap-1.5"><i class="fa-brands fa-github"></i> GitHub</a>
+<a href="${p.live}" class="px-3 py-1.5 bg-brand-blue dark:bg-brand-cyber text-white dark:text-brand-dark font-mono text-[11px] font-bold rounded-lg transition-all flex items-center gap-1.5 hover:opacity-90">Live Demo</a>
+</div>
+</div>
+`);
+});
+</script>
+</div>
+</div>
+</section>
 
-            </div>
-        </div>
-    </section>
+<section class="py-24 bg-white dark:bg-[#070d1e] border-y border-slate-200/50 dark:border-slate-800/50 relative z-10">
+<div class="max-w-4xl mx-auto px-6">
+<div class="text-center space-y-2 mb-16" data-aos="fade-up">
+<h2 id="sec-case-title" class="text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white">Featured Project Case Study</h2>
+<div class="w-12 h-1 bg-brand-blue dark:bg-brand-cyber mx-auto rounded-full"></div>
+</div>
+<div class="p-8 rounded-3xl bg-[#f8fafc] dark:bg-[#0b1329] border border-slate-200/60 dark:border-slate-800/60 shadow-inner grid grid-cols-1 md:grid-cols-2 gap-8 font-sans">
+<div class="space-y-4">
+<div>
+<h4 class="text-xs font-mono font-extrabold text-red-500 uppercase tracking-widest">[ PROBLEM STATEMENT ]</h4>
+<p id="case-prob" class="text-xs text-slate-600 dark:text-slate-400 font-bengali mt-1 leading-relaxed">ম্যানুয়াল এন্টারপ্রাইজ সিস্টেম হার্ডেনিং বা ফায়ারওয়াল কনফিগারেশন করতে গেলে প্রায়ই মিসকনফিগারেশনজনিত বাগ থেকে যায়, যা থ্রেট অ্যাক্টরদের অননুমোদিত অ্যাক্সেসের সুযোগ দেয়।</p>
+</div>
+<div>
+<h4 class="text-xs font-mono font-extrabold text-brand-blue dark:text-brand-cyber uppercase tracking-widest">[ SYSTEM METHOD ]</h4>
+<p id="case-method" class="text-xs text-slate-600 dark:text-slate-400 font-bengali mt-1 leading-relaxed">এমন একটি অটোমেটেড মডুলার আর্কিটেকচার স্ক্রিপ্টিং পাইপলাইন তৈরি করা হয়েছে, যা সিস্টেমেটিক্যালি লিনাক্স সিকিউরিটি প্যারামিটার স্ক্যান করে সিকিউর বেসলাইন নিশ্চিত করবে।</p>
+</div>
+</div>
+<div class="space-y-4 border-t md:border-t-0 md:border-l border-slate-200 dark:border-slate-800 pt-4 md:pt-0 md:pl-8">
+<div>
+<h4 class="text-xs font-mono font-extrabold text-brand-indigo uppercase tracking-widest">[ TOOLS UTILIZED ]</h4>
+<div class="flex flex-wrap gap-1.5 mt-2">
+<span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 font-mono text-[10px] font-bold">Bash Shell</span>
+<span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 font-mono text-[10px] font-bold">Sysctl Hardening</span>
+<span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 font-mono text-[10px] font-bold">IPtables Engine</span>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-mono font-extrabold text-emerald-500 uppercase tracking-widest">[ MEASURED RESULT ]</h4>
+<p id="case-res" class="text-xs text-slate-600 dark:text-slate-400 font-bengali mt-1 leading-relaxed">সার্ভার ডিপ্লয়মেন্ট টাইম ৮০% হ্রাস পেয়েছে এবং মিসকনফিগারেশনজনিত সিকিউরিটি গ্যাপ একদম শূন্যের কোঠায় নেমে এসেছে।</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Scanner Banner & Lab Tools -->
-    <section id="tools" class="py-24 bg-transparent border-t border-slate-100 dark:border-slate-800/40 relative z-10">
-        <div class="max-w-6xl mx-auto px-6 space-y-20">
-            
-            <!-- SECTION 1: Vulnerability Scanner 2.0 Banner Container -->
-            <div id="glow-banner-container" class="w-full bg-[#0b1329] border border-slate-800/80 rounded-[36px] py-16 px-6 lg:px-12 text-center text-white relative overflow-hidden shadow-2xl group transition-all duration-500 dark-container-glow" data-aos="zoom-in" data-aos-duration="1000">
-                <!-- Inside Tracker Spotlight -->
-                <div id="banner-spotlight" class="container-cursor-spot"></div>
+<section class="py-12 bg-transparent relative z-10">
+<div class="max-w-6xl mx-auto px-6">
+<div id="glow-banner-container" class="w-full bg-[#0b1329] border border-slate-800/80 rounded-[36px] py-14 px-6 lg:px-12 text-center text-white relative overflow-hidden shadow-2xl group transition-all duration-500 dark-container-glow" data-aos="zoom-in">
+<div id="banner-spotlight" class="container-cursor-spot"></div>
+<div class="relative z-10 max-w-2xl mx-auto space-y-4">
+<span id="scan-tag" class="px-3 py-1 bg-brand-cyber/20 border border-brand-cyber/40 text-brand-cyber text-[10px] font-bold tracking-widest font-mono rounded-full uppercase inline-block">● Infrastructure Scanner Sandbox</span>
+<h2 class="text-2xl lg:text-4xl font-extrabold tracking-tight">Security Vulnerability <span class="text-brand-cyber">Scanner</span> 2.0</h2>
+<p id="scan-desc" class="text-xs lg:text-sm text-slate-400 font-bengali max-w-md mx-auto leading-relaxed">টার্গেট ডোমেইন বা আইপি এড্রেস ইনপুট দিন। আমাদের মক এআই আর্কিটেকচার থ্রেট ভেক্টর ক্যালকুলেট করবে।</p>
+<div class="flex flex-col sm:flex-row items-center gap-3 max-w-xl mx-auto pt-4 bg-slate-950/40 p-2 rounded-2xl border border-white/5 backdrop-blur-sm">
+<div class="flex items-center gap-3 flex-1 px-3 w-full">
+<i class="fa-solid fa-globe text-slate-500 text-sm"></i>
+<input type="text" id="scan-input" placeholder="Enter Target Domain (e.g., example.com)" class="w-full bg-transparent border-none text-xs focus:outline-none text-white placeholder-slate-500 font-mono">
+</div>
+<button id="scan-btn" class="w-full sm:w-auto bg-brand-cyber hover:bg-emerald-600 text-brand-dark px-6 py-3 rounded-xl text-xs font-bold transition-all font-sans tracking-wide active:scale-95 shadow-cyber-glow">DEEP SCAN</button>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-                <div class="relative z-10 max-w-2xl mx-auto space-y-5">
-                    <span id="scan-tag" class="px-3 py-1 bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-[10px] font-bold tracking-widest font-mono rounded-full uppercase inline-block">● Global Security Database Active</span>
-                    <h2 class="text-3xl lg:text-5xl font-extrabold tracking-tight">Vulnerability <span class="text-brand-blue">Scanner</span> 2.0</h2>
-                    <p id="scan-desc" class="text-xs lg:text-sm text-slate-400 max-w-lg mx-auto leading-relaxed">Input your target social media profile token string or security integrity URL endpoint. Our localized AI pipeline will automatically simulate threat vectors and calculate relative structural risk parameters.</p>
-                    <div class="flex flex-col sm:flex-row items-center gap-3 max-w-xl mx-auto pt-6 bg-slate-950/40 p-2 rounded-2xl border border-white/5 backdrop-blur-sm">
-                        <div class="flex items-center gap-3 flex-1 px-3 w-full">
-                            <i class="fa-solid fa-magnifying-glass text-slate-500 text-sm"></i>
-                            <input type="text" id="scan-input" placeholder="FB/Insta Link or Password..." class="w-full bg-transparent border-none text-xs focus:outline-none text-white placeholder-slate-500">
-                        </div>
-                        <button id="scan-btn" class="w-full sm:w-auto bg-brand-blue hover:bg-blue-600 shadow-blue-glow text-white px-8 py-3.5 rounded-xl text-xs font-bold transition-all font-sans tracking-wide active:scale-95">DEEP SCAN</button>
-                    </div>
-                </div>
-            </div>
+<section id="certifications" class="py-24 bg-transparent border-t border-slate-200/40 dark:border-slate-800/40 relative z-10">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center space-y-2 mb-16" data-aos="fade-up">
+<h2 id="sec-certs-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Certifications & Achievements</h2>
+<div class="w-12 h-1 bg-brand-blue dark:bg-brand-cyber mx-auto rounded-full"></div>
+</div>
 
-            <!-- SECTION 2: "আমার প্রজেক্ট এবং টুলস" Section Container -->
-            <div id="glow-projects-container" class="w-full bg-[#0b1329] border border-slate-800/80 rounded-[36px] py-16 px-6 lg:px-12 text-white relative shadow-2xl group transition-all duration-500 dark-container-glow" data-aos="fade-up">
-                <!-- Inside Tracker Spotlight -->
-                <div id="projects-spotlight" class="container-cursor-spot"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<script>
+const certificates = [
+{ title: 'Cisco Introduction to Cybersecurity', issuer: 'Cisco NetAcad Platform', icon: 'fa-graduation-cap', type: 'Certificate' },
+{ title: 'Cisco Networking Basics Ecosystem', issuer: 'Cisco Academy Node', icon: 'fa-network-wired', type: 'Certificate' },
+{ title: 'Google Cybersecurity Engine', issuer: 'Google / Coursera Hub', icon: 'fa-google', type: 'Certificate' },
+{ title: 'TryHackMe Pre-Security Suite', issuer: 'TryHackMe Platform Lab', icon: 'fa-cube', type: 'Achievement' },
+{ title: 'HackTheBox Badges & Machine Owns', issuer: 'HackTheBox Lab Network', icon: 'fa-terminal', type: 'Achievement' },
+{ title: 'Linux Server Enterprise Hardening Setup', issuer: 'Local Infrastructure Node', icon: 'fa-linux', type: 'Achievement' },
+{ title: '10+ Security Automation Scripts Hub', issuer: 'GitHub Repository Deployment', icon: 'fa-code-branch', type: 'Achievement' }
+];
+certificates.forEach((c, i) => {
+document.write(`
+<div class="p-5 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/50 dark:border-slate-800/50 shadow-premium hover:shadow-premium-hover hover:border-brand-blue dark:hover:border-brand-cyber transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="${i * 30}">
+<div class="space-y-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-indigo to-brand-blue dark:from-brand-cyber dark:to-emerald-600 flex items-center justify-center text-white text-base"><i class="fa-solid ${c.icon}"></i></div>
+<h4 class="font-bold text-xs text-slate-900 dark:text-white leading-snug">${c.title}</h4>
+<p class="text-[11px] text-slate-400 font-mono">${c.issuer}</p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800/60"><span class="inline-flex items-center text-[9px] font-bold font-mono text-brand-cyber bg-emerald-500/10 px-2 py-0.5 rounded">${c.type}</span></div>
+</div>
+`);
+});
+</script>
+</div>
+</div>
+</section>
 
-                <div class="relative z-10 space-y-12">
-                    <div class="text-center space-y-2">
-                        <h2 id="sec-tools-title" class="text-2xl lg:text-4xl font-extrabold text-white">My Projects & Tools</h2>
-                        <div class="w-12 h-1 bg-brand-blue mx-auto rounded-full mt-2"></div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Project Box 1 -->
-                        <div class="p-6 rounded-3xl bg-slate-950/40 border border-white/5 flex flex-col justify-between h-56 hover:bg-brand-blue hover:border-brand-blue hover:-translate-y-1 transform transition-all duration-300 group/item relative z-30">
-                            <div class="space-y-2">
-                                <div class="w-8 h-8 rounded-lg bg-brand-blue/20 flex items-center justify-center text-brand-blue group-hover/item:bg-white/20 group-hover/item:text-white transition-all duration-300"><i class="fa-solid fa-gift"></i></div>
-                                <h4 id="proj-1-title" class="font-bold text-base text-brand-blue pt-2 group-hover/item:text-white transition-colors">Digital Salami Claim System 🌚</h4>
-                                <p id="proj-1-desc" class="text-xs text-slate-400 group-hover/item:text-white/90 transition-colors">A highly interactive, gamified, and fun structural laboratory script designed to optimize and automate the collection sequence of festive Eid greetings.</p>
-                            </div>
-                            <!-- Visit Demo Button Box -->
-                            <div class="flex justify-end pt-2">
-                                <a href="#" class="px-4 py-2 bg-brand-blue group-hover/item:bg-white text-white group-hover/item:text-brand-blue font-mono text-xs font-bold rounded-xl shadow-md hover:scale-105 transition-all duration-300 flex items-center gap-2">
-                                    Visit Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Project Box 2 -->
-                        <div class="p-6 rounded-3xl bg-slate-950/40 border border-white/5 flex flex-col justify-between h-56 hover:bg-brand-blue hover:border-brand-blue hover:-translate-y-1 transform transition-all duration-300 group/item relative z-30">
-                            <div class="space-y-2">
-                                <div class="w-8 h-8 rounded-lg bg-brand-blue/20 flex items-center justify-center text-brand-blue group-hover/item:bg-white/20 group-hover/item:text-white transition-all duration-300"><i class="fa-solid fa-wallet"></i></div>
-                                <h4 class="font-bold text-base pt-2 group-hover/item:text-white transition-colors">Nagad Eid Salami</h4>
-                                <p id="proj-2-desc" class="text-xs text-slate-400 group-hover/item:text-white/90 transition-colors">A customized interface blueprint that accurately replicates the operational financial wallet parameters to broadcast digital Eid allocations safely.</p>
-                            </div>
-                            <!-- Visit Demo Button Box -->
-                            <div class="flex justify-end pt-2">
-                                <a href="#" class="px-4 py-2 bg-brand-blue group-hover/item:bg-white text-white group-hover/item:text-brand-blue font-mono text-xs font-bold rounded-xl shadow-md hover:scale-105 transition-all duration-300 flex items-center gap-2">
-                                    Visit Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Project Box 3 -->
-                        <div class="p-6 rounded-3xl bg-slate-950/40 border border-white/5 flex flex-col justify-between h-56 hover:bg-brand-blue hover:border-brand-blue hover:-translate-y-1 transform transition-all duration-300 group/item relative z-30">
-                            <div class="space-y-2">
-                                <div class="w-8 h-8 rounded-lg bg-brand-blue/20 flex items-center justify-center text-brand-blue group-hover/item:bg-white/20 group-hover/item:text-white transition-all duration-300"><i class="fa-solid fa-paint-brush"></i></div>
-                                <h4 id="proj-3-title" class="font-bold text-base text-brand-blue pt-2 group-hover/item:text-white transition-colors">Premium Eid Banner Architect</h4>
-                                <p id="proj-3-desc" class="text-xs text-slate-400 group-hover/item:text-white/90 transition-colors">An advanced graphic asset processing node that utilizes coordinate data layers to compile fully personalized and high-resolution digital media greetings.</p>
-                            </div>
-                            <!-- Visit Demo Button Box -->
-                            <div class="flex justify-end pt-2">
-                                <a href="#" class="px-4 py-2 bg-brand-blue group-hover/item:bg-white text-white group-hover/item:text-brand-blue font-mono text-xs font-bold rounded-xl shadow-md hover:scale-105 transition-all duration-300 flex items-center gap-2">
-                                    Visit Demo <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="py-12 bg-slate-900 text-white relative z-10 dark-container-glow">
+<div id="stats-spotlight" class="container-cursor-spot"></div>
+<div class="max-w-6xl mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-4 p-6 rounded-2xl bg-slate-950/40 border border-white/5" data-aos="fade-right">
+<div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+<i class="fa-solid fa-cube text-red-500 text-2xl"></i>
+<h3 class="text-sm font-bold font-mono">TryHackMe Profile Matrix</h3>
+</div>
+<div class="grid grid-cols-2 gap-4 text-xs font-mono">
+<div class="bg-slate-900 p-3 rounded-xl border border-white/5">
+<span class="text-slate-400 block mb-1">Global Rank</span>
+<span class="text-base font-bold text-red-400">Top 5%</span>
+</div>
+<div class="bg-slate-900 p-3 rounded-xl border border-white/5">
+<span class="text-slate-400 block mb-1">Badges Owned</span>
+<span class="text-base font-bold text-yellow-400">12+ Earned</span>
+</div>
+<div class="bg-slate-900 p-3 rounded-xl border border-white/5">
+<span class="text-slate-400 block mb-1">Rooms Solved</span>
+<span class="text-base font-bold text-emerald-400">45+ Completed</span>
+</div>
+<div class="bg-slate-900 p-3 rounded-xl border border-white/5">
+<span class="text-slate-400 block mb-1">Learning Paths</span>
+<span class="text-base font-bold text-blue-400">Pre-Security Complete</span>
+</div>
+</div>
+</div>
 
-        </div>
-    </section>
+<div class="space-y-4 p-6 rounded-2xl bg-slate-950/40 border border-white/5" data-aos="fade-left">
+<div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+<i class="fa-solid fa-terminal text-green-500 text-2xl"></i>
+<h3 class="text-sm font-bold font-mono">HackTheBox Cyber Status</h3>
+</div>
+<div class="grid grid-cols-3 gap-4 text-xs font-mono">
+<div class="bg-slate-900 p-3 rounded-xl border border-white/5 text-center">
+<span class="text-slate-400 block mb-1">Machines Owned</span>
+<span class="text-base font-bold text-green-400">8 Box</span>
+</div>
+<div class="bg-slate-900 p-3 rounded-xl border border-white/5 text-center">
+<span class="text-slate-400 block mb-1">Lab Rank</span>
+<span class="text-base font-bold text-blue-400">Script Kiddie</span>
+</div>
+<div class="bg-slate-900 p-3 rounded-xl border border-white/5 text-center">
+<span class="text-slate-400 block mb-1">Respect Badges</span>
+<span class="text-base font-bold text-purple-400">3 Level</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Contact & Address -->
-    <section id="contact" class="py-24 bg-transparent border-t border-slate-200/50 dark:border-slate-800/40 relative z-10">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center space-y-2 mb-16" data-aos="fade-up">
-                <h2 id="sec-contact-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Establish Realtime Transmission Block</h2>
-                <div class="w-12 h-1 bg-brand-blue mx-auto rounded-full"></div>
-            </div>
+<section id="skills" class="py-24 bg-transparent relative z-10">
+<div class="max-w-4xl mx-auto px-6">
+<div class="text-center space-y-2 mb-16" data-aos="fade-up">
+<h2 id="sec-skills-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Technical Frameworks & Skills</h2>
+<div class="w-12 h-1 bg-brand-blue dark:bg-brand-cyber mx-auto rounded-full"></div>
+</div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-                <div class="lg:col-span-2 space-y-4" data-aos="fade-right" data-aos-duration="800">
-                    <div class="p-5 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/30 dark:border-slate-800/50 flex items-center gap-4 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue hover:text-white transition-all duration-500 ease-in-out group relative z-30">
-                        <div class="w-10 h-10 rounded-xl bg-brand-blue/10 dark:bg-slate-800 flex items-center justify-center text-brand-blue group-hover:bg-white/20 group-hover:text-white transition-all duration-500"><i class="fa-solid fa-phone"></i></div>
-                        <div>
-                            <span id="lbl-call" class="block text-[10px] font-mono tracking-wider text-slate-400 group-hover:text-white/70 uppercase transition-colors duration-500">Audio Link Control</span>
-                            <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-white transition-colors duration-500">01932357172</span>
-                        </div>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/30 dark:border-slate-800/50 flex items-center gap-4 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue hover:text-white transition-all duration-500 ease-in-out group relative z-30">
-                        <div class="w-10 h-10 rounded-xl bg-brand-blue/10 dark:bg-slate-800 flex items-center justify-center text-brand-blue group-hover:bg-white/20 group-hover:text-white transition-all duration-500"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <span id="lbl-email" class="block text-[10px] font-mono tracking-wider text-slate-400 group-hover:text-white/70 uppercase transition-colors duration-500">Email Routing Port</span>
-                            <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-white transition-colors duration-500">Alviahmedsaif321@gmail.com</span>
-                        </div>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/30 dark:border-slate-800/50 flex items-center gap-4 shadow-premium hover:shadow-premium-hover hover:bg-brand-blue hover:text-white transition-all duration-500 ease-in-out group relative z-30">
-                        <div class="w-10 h-10 rounded-xl bg-brand-blue/10 dark:bg-slate-800 flex items-center justify-center text-brand-blue group-hover:bg-white/20 group-hover:text-white transition-all duration-500"><i class="fa-solid fa-location-dot"></i></div>
-                        <div>
-                            <span id="lbl-address" class="block text-[10px] font-mono tracking-wider text-slate-400 group-hover:text-white/70 uppercase transition-colors duration-500">Physical Operations Base</span>
-                            <span id="val-address" class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-white transition-colors duration-500">Mymensingh Sadar, Mymensingh, Bangladesh</span>
-                        </div>
-                    </div>
-                </div>
+<div class="space-y-5" id="skills-progress-container">
+<script>
+const coreSkills = [
+{ name: 'Cyber Security (Defensive/VAPT)', value: 75 },
+{ name: 'Linux Infrastructure & Administration', value: 85 },
+{ name: 'Networking Fundamentals (TCP/IP, Routing)', value: 70 },
+{ name: 'Python Scripting & Automation', value: 65 },
+{ name: 'JavaScript Core Execution', value: 80 },
+{ name: 'React Node Engine Architecture', value: 60 },
+{ name: 'Node.js Enterprise Backend', value: 55 },
+{ name: 'Git Core Automation Hub & GitHub pipelines', value: 90 }
+];
+coreSkills.forEach((s, idx) => {
+document.write(`
+<div class="space-y-1.5">
+<div class="flex justify-between text-xs font-bold tracking-wide text-slate-700 dark:text-slate-300">
+<span>${s.name}</span>
+<span class="font-mono progress-percent-text" data-max="${s.value}">0%</span>
+</div>
+<div class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-brand-blue dark:bg-brand-cyber rounded-full animated-progress-bar w-0" data-width="${s.value}%"></div>
+</div>
+</div>
+`);
+});
+</script>
+</div>
+</div>
+</section>
 
-                <!-- Input Form Structure -->
-                <div class="lg:col-span-3 p-8 bg-white dark:bg-[#0b1329]/40 border border-slate-200/60 dark:border-slate-800/60 rounded-[32px] shadow-premium hover:shadow-premium-hover transition-all duration-500 relative z-30" data-aos="fade-left" data-aos-duration="800">
-                    <form id="cyberContactForm" class="space-y-5">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 font-mono">IDENTITY_STRING</label>
-                            <input type="text" id="formName" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-brand-blue/10 transition-all duration-300">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 font-mono">EMAIL_ADDR_GATEWAY</label>
-                            <input type="email" id="formEmail" required placeholder="identity@domain.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-brand-blue/10 transition-all duration-300">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 font-mono">MESSAGE_CONTENT</label>
-                            <textarea id="formMessage" rows="4" required placeholder="Type your secure data stream packet..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:border-brand-blue focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-brand-blue/10 shadow-inner transition-all duration-300 resize-none"></textarea>
-                        </div>
-                        <button id="form-submit-btn" type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-indigo to-brand-blue shadow-blue-glow text-white font-semibold text-sm transition-all duration-300 hover:opacity-95">
-                            Transmit Payload Packet
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="py-24 bg-white dark:bg-[#070d1e] border-y border-slate-200/50 dark:border-slate-800/50 relative z-10">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center space-y-2 mb-16" data-aos="fade-up">
+<h2 id="sec-tools-title" class="text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white">Security Toolkit Matrix</h2>
+<div class="w-12 h-1 bg-brand-blue dark:bg-brand-cyber mx-auto rounded-full"></div>
+</div>
 
-    <!-- Footer System Component -->
-    <footer class="py-12 border-t border-slate-200/50 dark:border-slate-800/40 bg-white dark:bg-[#030712] text-center text-xs text-slate-400 font-mono relative z-10">
-        © 2026 Saif Khan. All Rights Reserved.
-    </footer>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+<script>
+const toolkits = [
+{ name: 'Nmap', icon: 'fa-network-wired' },
+{ name: 'Wireshark', icon: 'fa-wave-square' },
+{ name: 'Burp Suite', icon: 'fa-shield-halved' },
+{ name: 'OWASP ZAP', icon: 'fa-bug' },
+{ name: 'Metasploit', icon: 'fa-terminal' },
+{ name: 'Hydra', icon: 'fa-key' },
+{ name: 'Gobuster', icon: 'fa-folder-tree' },
+{ name: 'Nikto', icon: 'fa-magnifying-glass' },
+{ name: 'Linux OS', icon: 'fa-linux' },
+{ name: 'Git Hub Core', icon: 'fa-code-branch' }
+];
+toolkits.forEach((t, i) => {
+document.write(`
+<div class="p-4 rounded-xl bg-[#f8fafc] dark:bg-[#0b1329] border border-slate-200/60 dark:border-slate-800/60 text-center space-y-2 hover:border-brand-blue dark:hover:border-brand-cyber transition-all duration-300" data-aos="zoom-in" data-aos-delay="${i * 20}">
+<div class="text-xl text-brand-blue dark:text-brand-cyber"><i class="fa-solid ${t.icon}"></i></div>
+<div class="text-xs font-bold text-slate-800 dark:text-slate-200 font-mono">${t.name}</div>
+</div>
+`);
+});
+</script>
+</div>
+</div>
+</section>
 
-    <!-- AOS Animation Engine Core JS CDN -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS Engine
-        AOS.init({
-            once: true,
-            offset: 80,
-            easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
-        });
+<section id="services" class="py-24 bg-transparent relative z-10">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center space-y-2 mb-16" data-aos="fade-up">
+<span id="sec-services-tag" class="text-xs font-semibold text-brand-blue dark:text-brand-cyber uppercase tracking-wider block">Operational Focus</span>
+<h2 id="sec-services-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Security Services Provided</h2>
+<div class="w-12 h-1 bg-brand-blue dark:bg-brand-cyber mx-auto rounded-full"></div>
+</div>
 
-        // --- GLOBAL MULTI-LANGUAGE DICTIONARY DIALECT ENGINE ---
-        let currentLang = 'bn'; // Changed to 'bn' here so the first click event updates it immediately to 'en'
-        const dictionary = {
-            en: {
-                navHome: 'Home', navFeatured: 'Featured', navServices: 'Services', navTools: 'Tools', navContact: 'Contact',
-                heroGreet: "Hi, I am", heroTitle: "Diploma in Computer Science & Technology Student | Linux Enthusiast | Cybersecurity Learner",
-                heroDesc: "I am a Diploma in Computer Science & Technology student with a strong interest in Linux, Web Development and Cybersecurity.",
-                statDedication: "Dedication Level", statInstitute: "Polytechnic Institute", statNode: "Learning Node",
-                secFeaturedTitle: "Education & Career Objective", featEduDesc: "I am a CSE student. Through this polytechnic curriculum, I am acquiring detailed expertise regarding structural data patterns, basic Linux architectures, and code compilation pipelines.",
-                featGoalTitle: "Cybersecurity & Enterprise Security", featGoalDesc: "Continuously analyzing new cyber threat matrices, security protocols, and defensive strategies to establish myself as a highly skilled global professional is my main objective.",
-                secServicesTag: "What We Provide", secServicesTitle: "Our Services",
-                serv1Desc: "To safeguard your digital assets from threat actors, we offer premium protection protocols and absolute security fundamentals auditing setup.",
-                serv2Desc: "Elevate your corporate architecture to the peak of the global digital era by deploying ultra-modern and fully responsive web systems.",
-                serv3Desc: "Developing exceptionally high-performance, modular, and native standard mobile applications optimized perfectly for both Android and iOS systems.",
-                serv4Desc: "Reaching target consumer demographics seamlessly by establishing elite marketing tracks across global search networks and targeted Social Media frameworks.",
-                serv5Desc: "Transform raw footage components into highly engaging, dynamic, and clean commercial media clips with production-grade computational editing.",
-                serv6Desc: "Forging dynamic and highly memorable structural brand nodes, logos, and vector assets to build an authoritative visual corporate identity architecture.",
-                serv7Desc: "Deploying active endpoint code analysis pipelines, remote malware scrubbing operations, and structural defense shields to maintain live web infrastructure states.",
-                serv8Desc: "Conducting proactive penetration testing pipelines to isolate low-level software vulnerabilities and implement robust remediation blocks before exploitation occurs.",
-                scanTag: "● Global Security Database Active", scanDesc: "Input your target social media profile token string or security integrity URL endpoint. Our localized AI pipeline will automatically simulate threat vectors and calculate relative structural risk parameters.",
-                scanInput: "FB/Insta Link or Password...", scanBtn: "DEEP SCAN", secToolsTitle: "My Projects & Tools",
-                proj1Title: "Digital Salami Claim System 🌚", proj1Desc: "A highly interactive, gamified, and fun structural laboratory script designed to optimize and automate the collection sequence of festive Eid greetings.",
-                proj2Desc: "A customized interface blueprint that accurately replicates the operational financial wallet parameters to broadcast digital Eid allocations safely.",
-                proj3Title: "Premium Eid Banner Architect", proj3Desc: "An advanced graphic asset processing node that utilizes coordinate data layers to compile fully personalized and high-resolution digital media greetings.",
-                secContactTitle: "Establish Realtime Transmission Block", lblCall: "Audio Link Control", lblEmail: "Email Routing Port",
-                lblAddress: "Physical Operations Base", valAddress: "Mymensingh Sadar, Mymensingh, Bangladesh", formBtn: "Transmit Payload Packet"
-            },
-            bn: {
-                navHome: 'হোম', navFeatured: 'অবজেক্টিভ', navServices: 'সার্ভিস', navTools: 'প্রজেক্ট', navContact: 'কন্ট্যাক্ট',
-                heroGreet: "আমি", heroTitle: "ডিপ্লোমা ইন কম্পিউটার সায়েন্স অ্যান্ড টেকনোলজি স্টুডেন্ট | লিনাক্স এনথুসিয়াস্ট | সাইবার সিকিউরিটি লার্নার",
-                heroDesc: "আমি কম্পিউটার সায়েন্স অ্যান্ড টেকনোলজি বিভাগের একজন শিক্ষার্থী। লিনাক্স আর্কিটেকচার, প্রফেশনাল ওয়েব ডেভেলপমেন্ট এবং ডিফেনসিভ সাইবার সিকিউরিটি প্রোটোকল নিয়ে কাজ করতে আমি অত্যন্ত আগ্রহী।",
-                statDedication: "ডেডিকেশন লেভেল", statInstitute: "পলিটেকনিক ইনস্টিটিউট", statNode: "লার্নিং নোড",
-                secFeaturedTitle: "শিক্ষা ও ক্যারিয়ার অবজেক্টিভ", featEduDesc: "আমি একজন সিএসই (CSE) শিক্ষার্থী। এই পলিটেকনিক্যাল কারিকুলামে আমি স্ট্রাকচারাল ডাটা প্যাটার্ন, বেসিক লিনাক্স আর্কিটেকচার এবং কোড কমপাইল প্রসেস সম্পর্কে বিস্তারিত জ্ঞান লাভ করছি।",
-                featGoalTitle: "সাইবার সিকিউরিটি ও এন্টারপ্রাইজ সিকিউরিটি", featGoalDesc: "প্রতিনিয়ত নতুন সাইবার থ্রেট ম্যাট্রিক্স এবং সিকিউরিটি প্রোটোকল ও ডিফেনসিভ স্ট্র্যাটেজি অ্যানালাইসিস করে নিজেকে একজন দক্ষ গ্লোবাল প্রফেশনাল হিসেবে গড়ে তোলাই আমার প্রধান লক্ষ্য।",
-                secServicesTag: "আমরা যা প্রদান করি", secServicesTitle: "আমাদের সার্ভিসসমূহ",
-                serv1Desc: "আপনার ডিজিটাল সম্পদকে হ্যাকারদের হাত থেকে সুরক্ষিত রাখতে আমরা দিচ্ছি সর্বোচ্চ নিরাপত্তা এবং সিকিউরিটি ফান্ডামেন্টালস অডিট।",
-                serv2Desc: "আধুনিক ও রেসপন্সিভ ওয়েবসাইট তৈরির মাধ্যমে আপনার ব্যবসাকে নিয়ে যান অনলাইন বিশ্বের শীর্ষে।",
-                serv3Desc: "অ্যান্ড্রয়েড ও আইওএস প্ল্যাটফর্মের জন্য হাই-পারফরম্যান্স মোবাইল অ্যাপ্লিকেশন তৈরি করি।",
-                serv4Desc: "সোশ্যাল মিডিয়া ও গুগল অ্যাডসের মাধ্যমে আপনার টার্গেট কাস্টমারের কাছে পৌঁছাতে সাহায্য করি।",
-                serv5Desc: "প্রফেশনাল লেভেলের ভিডিও এডিটিং এর মাধ্যমে আপনার কন্টেন্টকে আকর্ষণীয় করে তুলুন।",
-                serv6Desc: "লোভনীয় লোগো ও ব্র্যান্ডিং ডিজাইনের মাধ্যমে আপনার ব্যবসার ভিজ্যুয়াল আইডেন্টিটি তৈরি করি।",
-                serv7Desc: "মালওয়্যার ক্লিনআপ এবং উন্নত সিকিউরিটি শিল্ডের মাধ্যমে আপনার সাইটকে রাখি সুরক্ষিত।",
-                serv8Desc: "পেনিտրেশন টেস্টিং এর মাধ্যমে আপনারシステムের দুর্বলতা খুঁজে বের করে সমাধান দিই।",
-                scanTag: "● গ্লোবাল সিকিউরিটি ডাটাবেস একটিভ", scanDesc: "আপনার সোশ্যাল প্রোফাইল বা যেকোনো সিকিউরিটি ইন্টিগ্রিটি ইউআরএল ইনপুট দিন। আমাদের এআই সিস্টেম স্বয়ংক্রিয়ভাবে থ্রেট ভেক্টর সিমুলেট করে রিস্ক ফ্যাক্টর অ্যানালাইসিস করবে।",
-                scanInput: "ফেসবুক/ইনস্টা লিংক অথবা পাসওয়ার্ড...", scanBtn: "ডিপ স্ক্যান", secToolsTitle: "আমার প্রজেক্ট এবং টুলস",
-                proj1Title: "সালামি নেওয়ার ডিজিটাল সিস্টেম 🌚", proj1Desc: "ঈদের সালামি আদায়ের প্রসেস সহজ করতে একটি ফান এবং ইন্টারঅ্যাক্টিভ ডিজিটাল প্ল্যাটফর্ম ল্যাব প্রজেক্ট।",
-                proj2Desc: "নগদ ওয়ালেট স্টাইলে ইনপুট ড্যাশবোর্ড ফিল্ড তৈরি করে ঈদের সালামি পাঠানোর এক্সক্লুসিভ ফান ইন্টারফেস টুল।",
-                proj3Title: "ঈদের সেরা ব্যানার ডিজাইন", proj3Desc: "ইউজার ইনপুট ও ইমেজ নোড প্রসেস ব্যবহার করে প্রফেশনাল ডিজিটাল ঈদের ব্যানার জেনারেট করার গ্রাফিকাল সリューション।",
-                secContactTitle: "সরাসরি দেখা করুন বা কথা বলুন", lblCall: "কল করুন", lblEmail: "ইমেইল করুন",
-                lblAddress: "অফিস অ্যাড্রেস", valAddress: "ময়মনসিংহ সদর, ময়মনসিংহ", formBtn: "ডেটা প্যাকেট ট্রান্সমিট করুন"
-            }
-        };
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<script>
+const upgradedServices = [
+{ title: 'Vulnerability Assessment', icon: 'fa-shield-halved', id: 'srv-u-1' },
+{ title: 'Penetration Testing', icon: 'fa-skull-crossbones', id: 'srv-u-2' },
+{ title: 'Linux Administration', icon: 'fa-linux', id: 'srv-u-3' },
+{ title: 'Web Security Audit', icon: 'fa-lock', id: 'srv-u-4' },
+{ title: 'Security Research', icon: 'fa-microscope', id: 'srv-u-5' },
+{ title: 'Network Security', icon: 'fa-server', id: 'srv-u-6' },
+{ title: 'SOC Monitoring', icon: 'fa-desktop', id: 'srv-u-7' },
+{ title: 'Incident Response', icon: 'fa-kit-medical', id: 'srv-u-8' }
+];
+upgradedServices.forEach((s, idx) => {
+document.write(`
+<div class="p-6 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/40 dark:border-slate-800/40 shadow-premium hover:shadow-premium-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="${idx * 25}">
+<div class="w-11 h-11 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-brand-blue dark:text-brand-cyber text-lg mb-4"><i class="fa-solid ${s.icon}"></i></div>
+<h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2">${s.title}</h3>
+<p id="${s.id}" class="text-xs text-slate-500 dark:text-slate-400 font-bengali leading-relaxed"></p>
+</div>
+`);
+});
+</script>
+</div>
+</div>
+</section>
 
-        const langToggleBtn = document.getElementById('lang-toggle');
-        const langText = document.getElementById('lang-text');
+<section class="py-24 bg-white dark:bg-[#040914] border-t border-slate-200/50 dark:border-slate-800/50 relative z-10">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center space-y-2 mb-16" data-aos="fade-up">
+<h2 id="sec-blog-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Security Writeups & Intel</h2>
+<div class="w-12 h-1 bg-brand-blue dark:bg-brand-cyber mx-auto rounded-full"></div>
+</div>
 
-        langToggleBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'en' ? 'bn' : 'en';
-            langText.innerText = currentLang === 'en' ? 'English' : 'বাংলা';
-            
-            document.getElementById('nav-home').innerText = dictionary[currentLang].navHome;
-            document.getElementById('nav-featured').innerText = dictionary[currentLang].navFeatured;
-            document.getElementById('nav-services').innerText = dictionary[currentLang].navServices;
-            document.getElementById('nav-tools').innerText = dictionary[currentLang].navTools;
-            document.getElementById('nav-contact').innerText = dictionary[currentLang].navContact;
-            document.getElementById('hero-greet').innerText = dictionary[currentLang].heroGreet;
-            document.getElementById('hero-title').innerText = dictionary[currentLang].heroTitle;
-            document.getElementById('hero-desc').innerText = dictionary[currentLang].heroDesc;
-            document.getElementById('stat-dedication').innerText = dictionary[currentLang].statDedication;
-            document.getElementById('stat-institute').innerText = dictionary[currentLang].statInstitute;
-            document.getElementById('stat-node').innerText = dictionary[currentLang].statNode;
-            document.getElementById('sec-featured-title').innerText = dictionary[currentLang].secFeaturedTitle;
-            document.getElementById('feat-edu-desc').innerText = dictionary[currentLang].featEduDesc;
-            document.getElementById('feat-goal-title').innerText = dictionary[currentLang].featGoalTitle;
-            document.getElementById('feat-goal-desc').innerText = dictionary[currentLang].featGoalDesc;
-            document.getElementById('sec-services-tag').innerText = dictionary[currentLang].secServicesTag;
-            document.getElementById('sec-services-title').innerText = dictionary[currentLang].secServicesTitle;
-            document.getElementById('serv-1-desc').innerText = dictionary[currentLang].serv1Desc;
-            document.getElementById('serv-2-desc').innerText = dictionary[currentLang].serv2Desc;
-            document.getElementById('serv-3-desc').innerText = dictionary[currentLang].serv3Desc;
-            document.getElementById('serv-4-desc').innerText = dictionary[currentLang].serv4Desc;
-            document.getElementById('serv-5-desc').innerText = dictionary[currentLang].serv5Desc;
-            document.getElementById('serv-6-desc').innerText = dictionary[currentLang].serv6Desc;
-            document.getElementById('serv-7-desc').innerText = dictionary[currentLang].serv7Desc;
-            document.getElementById('serv-8-desc').innerText = dictionary[currentLang].serv8Desc;
-            document.getElementById('scan-tag').innerText = dictionary[currentLang].scanTag;
-            document.getElementById('scan-desc').innerText = dictionary[currentLang].scanDesc;
-            document.getElementById('scan-input').placeholder = dictionary[currentLang].scanInput;
-            document.getElementById('scan-btn').innerText = dictionary[currentLang].scanBtn;
-            document.getElementById('sec-tools-title').innerText = dictionary[currentLang].secToolsTitle;
-            document.getElementById('proj-1-title').innerText = dictionary[currentLang].proj1Title;
-            document.getElementById('proj-1-desc').innerText = dictionary[currentLang].proj1Desc;
-            document.getElementById('proj-2-desc').innerText = dictionary[currentLang].proj2Desc;
-            document.getElementById('proj-3-title').innerText = dictionary[currentLang].proj3Title;
-            document.getElementById('proj-3-desc').innerText = dictionary[currentLang].proj3Desc;
-            document.getElementById('sec-contact-title').innerText = dictionary[currentLang].secContactTitle;
-            document.getElementById('lbl-call').innerText = dictionary[currentLang].lblCall;
-            document.getElementById('lbl-email').innerText = dictionary[currentLang].lblEmail;
-            document.getElementById('lbl-address').innerText = dictionary[currentLang].lblAddress;
-            document.getElementById('val-address').innerText = dictionary[currentLang].valAddress;
-            document.getElementById('form-submit-btn').innerText = dictionary[currentLang].formBtn;
-        });
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<script>
+const blogs = [
+{ title: 'SQL Injection Basics: Understanding Database Interception Matrices', cat: 'SQLi', id: 'blog-t-1' },
+{ title: 'XSS Testing: Auditing Reflected & Stored Execution Vectors', cat: 'XSS', id: 'blog-t-2' },
+{ title: 'Linux Hardening: Hardening Enterprise Infrastructure Configuration', cat: 'Linux', id: 'blog-t-3' },
+{ title: 'OWASP Top 10 Core Mechanics: Mitigating Web Layer Exposure Risks', cat: 'OWASP', id: 'blog-t-4' }
+];
+blogs.forEach((b, i) => {
+document.write(`
+<div class="p-5 rounded-2xl bg-[#f8fafc] dark:bg-[#0b1329] border border-slate-200/60 dark:border-slate-800/60 flex flex-col justify-between space-y-4 shadow-sm hover:border-brand-blue dark:hover:border-brand-cyber transition-all duration-300" data-aos="fade-up" data-aos-delay="${i * 40}">
+<div class="space-y-2">
+<span class="text-[9px] font-bold font-mono bg-brand-blue/10 dark:bg-brand-cyber/10 text-brand-blue dark:text-brand-cyber px-2 py-0.5 rounded uppercase">${b.cat}</span>
+<h4 id="${b.id}" class="font-bold text-xs text-slate-900 dark:text-white leading-snug hover:text-brand-blue dark:hover:text-brand-cyber transition-colors cursor-pointer">${b.title}</h4>
+</div>
+<div class="text-[10px] text-slate-400 font-mono pt-2 border-t border-slate-200/40 dark:border-slate-800/40">Verified Writeup Node</div>
+</div>
+`);
+});
+</script>
+</div>
+</div>
+</section>
 
-        // Triggering click node instantly initializes default layout as English
-        langToggleBtn.click();
+<section id="contact" class="py-24 bg-transparent border-t border-slate-200/50 dark:border-slate-800/40 relative z-10">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center space-y-2 mb-16" data-aos="fade-up">
+<h2 id="sec-contact-title" class="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Establish Realtime Transmission Block</h2>
+<div class="w-12 h-1 bg-brand-blue dark:bg-brand-cyber mx-auto rounded-full"></div>
+</div>
 
-        // Theme Toggle Engine
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const htmlElement = document.documentElement;
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+<div class="lg:col-span-2 space-y-4" data-aos="fade-right">
+<div class="p-5 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/30 dark:border-slate-800/50 flex items-center gap-4 shadow-premium">
+<div class="w-10 h-10 rounded-xl bg-brand-blue/10 dark:bg-brand-cyber/10 flex items-center justify-center text-brand-blue dark:text-brand-cyber"><i class="fa-solid fa-phone"></i></div>
+<div>
+<span id="lbl-call" class="block text-[10px] font-mono tracking-wider text-slate-400 uppercase">Audio Link</span>
+<span class="text-sm font-semibold text-slate-800 dark:text-slate-200">01932357172</span>
+</div>
+</div>
+<div class="p-5 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/30 dark:border-slate-800/50 flex items-center gap-4 shadow-premium">
+<div class="w-10 h-10 rounded-xl bg-brand-blue/10 dark:bg-brand-cyber/10 flex items-center justify-center text-brand-blue dark:text-brand-cyber"><i class="fa-solid fa-envelope"></i></div>
+<div>
+<span id="lbl-email" class="block text-[10px] font-mono tracking-wider text-slate-400 uppercase">Email Routing Port</span>
+<span class="text-sm font-semibold text-slate-800 dark:text-slate-200">Alviahmedsaif321@gmail.com</span>
+</div>
+</div>
+<div class="p-5 rounded-2xl bg-white dark:bg-[#0b1329]/60 border border-slate-200/30 dark:border-slate-800/50 flex items-center gap-4 shadow-premium">
+<div class="w-10 h-10 rounded-xl bg-brand-blue/10 dark:bg-brand-cyber/10 flex items-center justify-center text-brand-blue dark:text-brand-cyber"><i class="fa-solid fa-location-dot"></i></div>
+<div>
+<span id="lbl-address" class="block text-[10px] font-mono tracking-wider text-slate-400 uppercase">Operations Base</span>
+<span id="val-address" class="text-sm font-semibold text-slate-800 dark:text-slate-200">Mymensingh Sadar, Mymensingh, Bangladesh</span>
+</div>
+</div>
+</div>
 
-        if (localStorage.getItem('theme') === 'dark') {
-            htmlElement.classList.add('dark');
-            themeIcon.className = 'fa-solid fa-moon';
-        } else {
-            htmlElement.classList.remove('dark');
-            themeIcon.className = 'fa-solid fa-sun';
-        }
+<div class="lg:col-span-3 p-8 bg-white dark:bg-[#0b1329]/40 border border-slate-200/60 dark:border-slate-800/60 rounded-[32px] shadow-premium" data-aos="fade-left">
+<form id="cyberContactForm" class="space-y-5">
+<div>
+<label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 font-mono">IDENTITY_STRING</label>
+<input type="text" id="formName" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:border-brand-blue dark:focus:border-brand-cyber focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-brand-blue/10 transition-all duration-300">
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 font-mono">EMAIL_ADDR_GATEWAY</label>
+<input type="email" id="formEmail" required placeholder="identity@domain.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:border-brand-blue dark:focus:border-brand-cyber focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-brand-blue/10 transition-all duration-300">
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 font-mono">MESSAGE_CONTENT</label>
+<textarea id="formMessage" rows="4" required placeholder="Type your secure data stream packet..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 text-sm focus:outline-none focus:border-brand-blue dark:focus:border-brand-cyber focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-brand-blue/10 transition-all duration-300 resize-none"></textarea>
+</div>
+<button id="form-submit-btn" type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-indigo dark:from-brand-cyber dark:to-emerald-600 shadow-blue-glow text-white dark:text-brand-dark font-bold text-sm transition-all duration-300 hover:opacity-95">Transmit Payload Packet</button>
+</form>
+</div>
+</div>
+</div>
+</section>
 
-        themeToggleBtn.addEventListener('click', () => {
-            if (htmlElement.classList.contains('dark')) {
-                htmlElement.classList.remove('dark');
-                htmlElement.classList.add('light');
-                themeIcon.className = 'fa-solid fa-sun';
-                localStorage.setItem('theme', 'light');
-            } else {
-                htmlElement.classList.remove('light');
-                htmlElement.classList.add('dark');
-                themeIcon.className = 'fa-solid fa-moon';
-                localStorage.setItem('theme', 'dark');
-            }
-        });
+<footer class="py-12 border-t border-slate-200/50 dark:border-slate-800/40 bg-white dark:bg-[#030712] relative z-10">
+<div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-xs text-slate-400">
+<div>© 2026 Saif Khan. All Rights Reserved.</div>
+<div class="flex flex-wrap gap-6 justify-center">
+<a href="#home" class="hover:text-brand-blue dark:hover:text-brand-cyber transition-all">Home</a>
+<a href="https://github.com/Alvi01719" target="_blank" class="hover:text-white transition-all">GitHub</a>
+<a href="https://www.linkedin.com/in/saif-khan-34ba4a24b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="hover:text-blue-400 transition-all">LinkedIn</a>
+<a href="https://www.facebook.com/Saif449" target="_blank" class="hover:text-blue-600 transition-all">Facebook</a>
+<a href="https://www.instagram.com/alvi_ahmed_saif?igsh=aHh2a2prbjYwYXl4" target="_blank" class="hover:text-pink-500 transition-all">Instagram</a>
+<a href="https://tryhackme.com" target="_blank" class="hover:text-red-400 transition-all">TryHackMe</a>
+<a href="https://hackthebox.com" target="_blank" class="hover:text-green-400 transition-all">HackTheBox</a>
+</div>
+</div>
+</footer>
 
-        // Global Mouse Aura Engine
-        const aura = document.getElementById('mouse-aura');
-        let currentX = 0, currentY = 0;
-        let targetX = 0, targetY = 0;
-        
-        window.addEventListener('mousemove', (e) => {
-            targetX = e.clientX;
-            targetY = e.clientY;
-        });
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+// Page Loader System Setup
+window.addEventListener('DOMContentLoaded', () => {
+setTimeout(() => document.getElementById('loader-text-1').classList.remove('opacity-0'), 200);
+setTimeout(() => document.getElementById('loader-text-2').classList.remove('opacity-0'), 700);
+setTimeout(() => document.getElementById('loader-text-3').classList.remove('opacity-0'), 1300);
+setTimeout(() => {
+const loader = document.getElementById('page-loader');
+loader.style.transition = 'opacity 0.5s ease'; loader.style.opacity = '0';
+setTimeout(() => loader.remove(), 500);
+AOS.init({ once: true, offset: 60, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' });
+}, 2000);
+});
 
-        function updateAuraPosition() {
-            currentX += (targetX - currentX) * 0.45; 
-            currentY += (targetY - currentY) * 0.45;
-            aura.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
-            requestAnimationFrame(updateAuraPosition);
-        }
-        updateAuraPosition();
+// --- MULTI-LANGUAGE DICTIONARY ENGINE ---
+let currentLang = 'bn';
+const dictionary = {
+en: {
+navHome: 'Home', navProjects: 'Projects', navCerts: 'Certifications', navSkills: 'Skills', navRoadmap: 'Roadmap', navServices: 'Services', navContact: 'Contact',
+heroGreet: "Hi, I am",
+heroDesc: "I am a Diploma in Computer Science & Technology student at Mymensingh Polytechnic Institute with a deep passion for Linux enterprise architecture, advanced web systems development, and defensive cybersecurity mechanics.",
+secTimelineTitle: "Professional Journey",
+timelineDesc1: "Deep analysis of shell scripting, kernel architecture, and open-source enterprise environments.",
+timelineDesc2: "Building full-stack web application frameworks, fast execution engines, and API endpoints.",
+timelineDesc3: "Penetration testing labs, info-sec framework auditing, and secure transport node logic optimization.",
+timelineDesc4: "Developing real-world threat hunting automation toolkits and responsive vulnerability blockers.",
+secLearningTitle: "Currently Learning", secRoadmapTitle: "Cybersecurity Roadmap", secProjectsTitle: "Cybersecurity Tools & Projects",
+pDesc1: "An optimized network probing script engineered to parse remote host ports and map entry points.",
+pDesc2: "A localized cryptographic token script built to generate high-entropy security strings.",
+pDesc3: "A real-time structural analysis engine checking password string patterns against universal policy.",
+pDesc4: "An asynchronous operational reconnaissance architecture structured to discover external target DNS subdomains.",
+pDesc5: "An active ARP/ICMP data stream routing protocol layer checking local spaces for alive client host profiles.",
+pDesc6: "A security logic parsing routine that systemically scans server auth logs to capture access anomalies.",
+pDesc7: "A localized shell script automation routine to streamline user management and patch deployments.",
+pDesc8: "A web pipeline testing targets for common vulnerabilities like cross-site bugs or injection holes.",
+secCaseTitle: "Featured Project Case Study",
+caseProb: "Manual configuration of firewall parameters often leads to security blindspots or logical access bugs.",
+caseMethod: "Designed an automated hardening utility module to parse variables and optimize core kernel nodes.",
+caseRes: "Server implementation times decreased by 80% while creating airtight zero-trust baselines instantly.",
+scanTag: "● Infrastructure Scanner Sandbox", scanDesc: "Input your target domain or asset link. Our localized pipeline will simulate structural threat arrays safely.",
+scanInput: "Enter Target Domain (e.g., example.com)", scanBtn: "DEEP SCAN",
+secCertsTitle: "Certifications & Achievements", secSkillsTitle: "Technical Frameworks & Skills", secToolsTitle: "Security Toolkit Matrix",
+secServicesTag: "Operational Focus", secServicesTitle: "Security Services Provided",
+srvU1: "Systemic auditing of network structures to isolate logical software vulnerabilities before deployment.",
+srvU2: "Controlled offensive simulation runs mimicking adversary tactics to break application security barriers.",
+srvU3: "Advanced enterprise Linux server initialization, privilege assignment logic, and configuration hardening.",
+srvU4: "Comprehensive white-box evaluation of active applications against universal OWASP threat matrices.",
+srvU5: "Detailed dynamic intelligence tracking and validation of emerging zero-day vulnerabilities.",
+srvU6: "Deploying enterprise firewall rulesets, structural subnet controls, and zero-trust transport rules.",
+srvU7: "Continuous log visibility pipelines, security endpoint validation setups, and threat visibility.",
+srvU8: "Immediate post-breach mitigation protocols, data recovery coordination, and target isolation.",
+secBlogTitle: "Security Writeups & Intel", secContactTitle: "Establish Realtime Transmission Block",
+blogT1: "SQL Injection Basics: Understanding Database Interception Matrices",
+blogT2: "XSS Testing: Auditing Reflected & Stored Execution Vectors",
+blogT3: "Linux Hardening: Hardening Enterprise Infrastructure Configuration",
+blogT4: "OWASP Top 10 Core Mechanics: Mitigating Web Layer Exposure Risks",
+lblCall: "Audio Link", lblEmail: "Email Routing Port", lblAddress: "Operations Base",
+valAddress: "Mymensingh Sadar, Mymensingh, Bangladesh", formBtn: "Transmit Payload Packet",
+toastSuccess: "Message Sent Successfully"
+},
+bn: {
+navHome: 'হোম', navProjects: 'প্রজেক্টসমূহ', navCerts: 'সার্টিফিকেশন', navSkills: 'স্কিলস', navRoadmap: 'রোডম্যাপ', navServices: 'সার্ভিসসমূহ', navContact: 'যোগাযোগ',
+heroGreet: "আমি",
+heroDesc: "আমি ময়মনসিংহ পলিটেকনিক ইনস্টিটিউটের কম্পিউটার সায়েন্স অ্যান্ড টেকনোলজি বিভাগের একজন শিক্ষার্থী। লিনাক্স এন্টারপ্রাইজ আর্কিটেকচার, প্রফেশনাল ওয়েব ডেভেলপমেন্ট এবং ডিফেনসিভ সাইবার সিকিউরিটি প্রোটোকল নিয়ে কাজ করতে আমি অত্যন্ত আগ্রহী।",
+secTimelineTitle: "প্রফেশনাল জার্নি",
+timelineDesc1: "শেল স্ক্রিপ্টিং, কার্নেল আর্কিটেকচার এবং ওপেন সোর্স সিস্টেম এনভায়রনমেন্টের গভীর বিশ্লেষণ শুরু।",
+timelineDesc2: "ফুল-স্ট্যাক ওয়েব অ্যাপ্লিকেশন আর্কিটেকচার, জাভাস্ক্রিপ্ট ইঞ্জিন এবং এপিআই ইন্টিগ্রেশন প্রোটোকল তৈরি।",
+timelineDesc3: "পেনিট্রেশন টেস্টিং ল্যাবস, ইনফরমেশন সিকিউরিটি ফ্রেমওয়ার্ক এবং ক্রিপ্টোগ্রাফিক প্রোটোকল লার্নিং নোড।",
+timelineDesc4: "রিয়েল-ওয়ার্ল্ড সিকিউরিটি অটোমেশন স্ক্রিপ্ট, থ্রেট হান্টিং টুলস এবং ভালনারেবিলিটি ব্লকিং ইঞ্জিন তৈরি।",
+secLearningTitle: "বর্তমানে যা শিখছি", secRoadmapTitle: "সাইবার সিকিউরিটি রোডম্যাপ", secProjectsTitle: "সাইবার সিকিউরিটি প্রজেক্ট এবং টুলস",
+pDesc1: "একটি অপ্টিমাইজড নেটওয়ার্ক প্রোবিং স্ক্রিপ্ট যা দূরবর্তী হোস্টের পোর্ট স্ক্যান করতে এবং লাইভ এন্ট্রি পয়েন্ট ম্যাপ করতে সক্ষম।",
+pDesc2: "ক্রিপ্টোগ্রাফিক অ্যালগরিদম ভিত্তিক একটি লোকালাইজড সিকিউরিটি স্ক্রিপ্ট যা ব্রুটফোর্স অ্যাটাক প্রতিরোধে সক্ষম উচ্চমানের পাসওয়ার্ড তৈরি করে।",
+pDesc3: "পাসওয়ার্ড স্ট্রিং অ্যানালাইসিস ইঞ্জিন যা ক্যারেক্টার এন্ট্রপি এবং পলিসি চেক করে পাসওয়ার্ডের নিরাপত্তা লেভেল নির্ধারণ করে।",
+pDesc4: "টার্গেট ডোমেইনের অধীনে থাকা সমস্ত সাবডোমেন এবং এক্সটার্নাল ডিএনএস অ্যাসেট আর্কিটেকচার খুঁজে বের করার রিকন ট্যুল।",
+pDesc5: "স্থানীয় লোকাল নেটওয়ার্কে প্রয়োজনীয় আইপি ক্লায়েন্ট প্রোফাইল সনাক্ত করার জন্য অ্যাক্টিভ এআরপি/আইসিএমপি স্ক্যানার।",
+pDesc6: "এন্টারপ্রাইজ সার্ভারের অথেনটিকেশন লগ ফাইল স্ক্রিন করে অ্যানোমালি এবং মেলিশিয়াস লগইন অ্যাটাক ক্যাপচার করার সিকিউরিটি স্ক্রিপ্ট।",
+pDesc7: "ইউজার ম্যানেজমেন্ট, সার্ভার প্যাচ আপডেট এবং ব্যাকআপ অটোমেট করার জন্য তৈরি লিনাক্স আদেশমালা স্ক্রিপ্ট।",
+pDesc8: "টার্গেট ওয়েব অ্যাপ্লিকেশনে প্রচলিত ওডাব্লুএএসপি টপ ১০ বাগ বা ইনজেকশন ভালনারেবিলিটি স্ক্যান করার অটোমেটেড পাইপলাইন।",
+secCaseTitle: "প্রজেক্ট কেস স্টাডি",
+caseProb: "ম্যানুয়াল এন্টারপ্রাইজ সিস্টেম হার্ডেনিং করতে গেলে প্রায়ই মিসকনফিগারেশনজনিত বাগ থেকে যায়, যা থ্রেট অ্যাক্টরদের অননুমোদিত অ্যাক্সেসের সুযোগ দেয়।",
+caseMethod: "এমন একটি অটোমেটেড মডুলার আর্কিটেকচার স্ক্রিপ্টিং পাইপলাইন তৈরি করা হয়েছে, যা লিনাক্স সিকিউরিটি প্যারামিটার স্ক্যান করে সিকিউর বেসলাইন নিশ্চিত করবে।",
+caseRes: "সার্ভার ডিপ্লয়মেন্ট টাইম ৮০% হ্রাস পেয়েছে এবং মিসকনফিগারেশনজনিত সিকিউরিটি গ্যাপ একদম শূন্যের কোঠায় নেমে এসেছে।",
+scanTag: "● ইনফ্রাস্ট্রাকচার স্ক্যানার স্যান্ডবক্স", scanDesc: "আপনার টার্গেট ডোমেন বা আইপি ইনপুট দিন। আমাদের মক পাইপলাইনটি থ্রেট ভেক্টর সিমুলেট করবে নিরাপদে।",
+scanInput: "টার্গেট ডোমেইন দিন (যেমন: example.com)", scanBtn: "ডিপ স্ক্যান",
+secCertsTitle: "সার্টিফিকেশন ও অর্জনসমূহ", secSkillsTitle: "টেকনিক্যাল ফ্রেমওয়ার্ক ও স্কিলস", secToolsTitle: "সিকিউরিটি টুলকিট ম্যাট্রিক্স",
+secServicesTag: "অপারেশনাল ফোকাস", secServicesTitle: "প্রদানকৃত সিকিউরিটি সার্ভিসসমূহ",
+srvU1: "সিস্টেম কোড ও নেটওয়ার্ক আর্কিটেকচারের লজিক্যাল দুর্বলতাগুলো ডিপ স্ক্যানিংয়ের মাধ্যমে সনাক্তকরণ।",
+srvU2: "হ্যাকারদের অ্যাটাক টেকনিক সিমুলেট করে অ্যাপ্লিকেশনের ডিফেন্স ব্যারিয়ার টেস্ট করা।",
+srvU3: "এন্টারপ্রাইজ লিনাক্স সার্ভার কনফিগারেশন, ইউজার প্রিভিলেজ আর্কিটেকচার এবং ওএস হার্ডেনিং প্রসেস তৈরি।",
+srvU4: "ওডাব্লুএএসপি (OWASP) থ্রেট ম্যাট্রিক্সের বিরুদ্ধে ওয়েব অ্যাপ্লিকেশনের সোর্স কোড এবং লজিক অডিট করা।",
+srvU5: "আধুনিক গ্লোবাল সাইবার থ্রেট স্ট্রেইন এবং জিরো-ডে ভালনারেবিলিটি অ্যানালাইসিস ও সিকিউরিটি রিসার্চ।",
+srvU6: "এন্টারপ্রাইজ ফায়ারওয়াল রুলসেট, সাবনেট ট্রাফিক কন্ট্রোল এবং জিরো-ট্রাস্ট পেরিমিটার ডিজাইন।",
+srvU7: "রিয়েল-টাইম লগ মনিটরিং, এসআইইএম ভিজিবিলিটি আর্কিটেকচার এবং নেটওয়ার্ক অ্যানোমালি ডিটেকশন।",
+srvU8: "সাইবার সিকিউরিটি ব্রিচ পরবর্তী দ্রুত মিটিগেশন প্রোটোকল, ডাটা রিকভারি এবং ইনফেক্টেড সিস্টেম আইসোলেশন।",
+secBlogTitle: "সিকিউরিটি রাইটআপস ও ইন্টেল", secContactTitle: "সরাসরি দেখা করুন বা কথা বলুন",
+blogT1: "এসকিউএল ইনজেকশন বেসিকস: ডাটাবেস ইন্টারসেপশন ম্যাট্রিক্সের গভীর বিশ্লেষণ",
+blogT2: "এক্সএসএস টেস্টিং: রিফ্লেক্টেড এবং স্টোর্ড এক্সিকিউশন ভেক্টর অডিটিং",
+blogT3: "লিনাক্স হার্ডেনিং: এন্টারপ্রাইজ ইনফ্রাস্ট্রাকচার কনফিগারেশন সিকিউর করার নিয়ম",
+blogT4: "ওডাব্লুএএসপি টপ ১০ মেকানিক্স: ওয়েব লেয়ার এক্সপোজার রিস্ক কমানোর উপায়",
+lblCall: "কল লিংক", lblEmail: "ইমেইল গেটওয়ে", lblAddress: "অপারেশন বেস",
+valAddress: "ময়মনসিংহ সদর, ময়মনসিংহ, বাংলাদেশ", formBtn: "ডেটা প্যাকেট ট্রান্সমিট করুন",
+toastSuccess: "বার্তাটি সফলভাবে পাঠানো হয়েছে!"
+}
+};
 
-        // 1. INSIDE SCANNER BANNER MOUSE TRACER
-        const bannerContainer = document.getElementById('glow-banner-container');
-        const bannerSpotlight = document.getElementById('banner-spotlight');
-        bannerContainer.addEventListener('mousemove', (e) => {
-            const rect = bannerContainer.getBoundingClientRect();
-            bannerSpotlight.style.left = (e.clientX - rect.left) + 'px';
-            bannerSpotlight.style.top = (e.clientY - rect.top) + 'px';
-        });
+const langToggleBtn = document.getElementById('lang-toggle');
+const langText = document.getElementById('lang-text');
 
-        // 2. INSIDE PROJECTS SECTION MOUSE TRACER
-        const projectsContainer = document.getElementById('glow-projects-container');
-        const projectsSpotlight = document.getElementById('projects-spotlight');
-        projectsContainer.addEventListener('mousemove', (e) => {
-            const rect = projectsContainer.getBoundingClientRect();
-            projectsSpotlight.style.left = (e.clientX - rect.left) + 'px';
-            projectsSpotlight.style.top = (e.clientY - rect.top) + 'px';
-        });
+langToggleBtn.addEventListener('click', () => {
+currentLang = currentLang === 'en' ? 'bn' : 'en';
+langText.innerText = currentLang === 'en' ? 'English' : 'বাংলা';
+document.getElementById('nav-home').innerText = dictionary[currentLang].navHome;
+document.getElementById('nav-projects').innerText = dictionary[currentLang].navProjects;
+document.getElementById('nav-certifications').innerText = dictionary[currentLang].navCerts;
+document.getElementById('nav-skills').innerText = dictionary[currentLang].navSkills;
+document.getElementById('nav-roadmap').innerText = dictionary[currentLang].navRoadmap;
+document.getElementById('nav-services').innerText = dictionary[currentLang].navServices;
+document.getElementById('nav-contact').innerText = dictionary[currentLang].navContact;
+document.getElementById('hero-greet').innerText = dictionary[currentLang].heroGreet;
+document.getElementById('hero-desc').innerText = dictionary[currentLang].heroDesc;
+document.getElementById('sec-timeline-title').innerText = dictionary[currentLang].secTimelineTitle;
+document.getElementById('timeline-desc-1').innerText = dictionary[currentLang].timelineDesc1;
+document.getElementById('timeline-desc-2').innerText = dictionary[currentLang].timelineDesc2;
+document.getElementById('timeline-desc-3').innerText = dictionary[currentLang].timelineDesc3;
+document.getElementById('timeline-desc-4').innerText = dictionary[currentLang].timelineDesc4;
+document.getElementById('sec-learning-title').innerText = dictionary[currentLang].secLearningTitle;
+document.getElementById('sec-roadmap-title').innerText = dictionary[currentLang].secRoadmapTitle;
+document.getElementById('sec-projects-title').innerText = dictionary[currentLang].secProjectsTitle;
+document.getElementById('p-desc-1').innerText = dictionary[currentLang].pDesc1;
+document.getElementById('p-desc-2').innerText = dictionary[currentLang].pDesc2;
+document.getElementById('p-desc-3').innerText = dictionary[currentLang].pDesc3;
+document.getElementById('p-desc-4').innerText = dictionary[currentLang].pDesc4;
+document.getElementById('p-desc-5').innerText = dictionary[currentLang].pDesc5;
+document.getElementById('p-desc-6').innerText = dictionary[currentLang].pDesc6;
+document.getElementById('p-desc-7').innerText = dictionary[currentLang].pDesc7;
+document.getElementById('p-desc-8').innerText = dictionary[currentLang].pDesc8;
+document.getElementById('sec-case-title').innerText = dictionary[currentLang].secCaseTitle;
+document.getElementById('case-prob').innerText = dictionary[currentLang].caseProb;
+document.getElementById('case-method').innerText = dictionary[currentLang].caseMethod;
+document.getElementById('case-res').innerText = dictionary[currentLang].caseRes;
+document.getElementById('scan-tag').innerText = dictionary[currentLang].scanTag;
+document.getElementById('scan-desc').innerText = dictionary[currentLang].scanDesc;
+document.getElementById('scan-input').placeholder = dictionary[currentLang].scanInput;
+document.getElementById('scan-btn').innerText = dictionary[currentLang].scanBtn;
+document.getElementById('sec-certs-title').innerText = dictionary[currentLang].secCertsTitle;
+document.getElementById('sec-skills-title').innerText = dictionary[currentLang].secSkillsTitle;
+document.getElementById('sec-tools-title').innerText = dictionary[currentLang].secToolsTitle;
+document.getElementById('sec-services-tag').innerText = dictionary[currentLang].secServicesTag;
+document.getElementById('sec-services-title').innerText = dictionary[currentLang].secServicesTitle;
+document.getElementById('srv-u-1').innerText = dictionary[currentLang].srvU1;
+document.getElementById('srv-u-2').innerText = dictionary[currentLang].srvU2;
+document.getElementById('srv-u-3').innerText = dictionary[currentLang].srvU3;
+document.getElementById('srv-u-4').innerText = dictionary[currentLang].srvU4;
+document.getElementById('srv-u-5').innerText = dictionary[currentLang].srvU5;
+document.getElementById('srv-u-6').innerText = dictionary[currentLang].srvU6;
+document.getElementById('srv-u-7').innerText = dictionary[currentLang].srvU7;
+document.getElementById('srv-u-8').innerText = dictionary[currentLang].srvU8;
+document.getElementById('sec-blog-title').innerText = dictionary[currentLang].secBlogTitle;
+document.getElementById('blog-t-1').innerText = dictionary[currentLang].blogT1;
+document.getElementById('blog-t-2').innerText = dictionary[currentLang].blogT2;
+document.getElementById('blog-t-3').innerText = dictionary[currentLang].blogT3;
+document.getElementById('blog-t-4').innerText = dictionary[currentLang].blogT4;
+document.getElementById('sec-contact-title').innerText = dictionary[currentLang].secContactTitle;
+document.getElementById('lbl-call').innerText = dictionary[currentLang].lblCall;
+document.getElementById('lbl-email').innerText = dictionary[currentLang].lblEmail;
+document.getElementById('lbl-address').innerText = dictionary[currentLang].lblAddress;
+document.getElementById('val-address').innerText = dictionary[currentLang].valAddress;
+document.getElementById('form-submit-btn').innerText = dictionary[currentLang].formBtn;
+});
 
-        // 3. REALTIME DIGITAL CLOCK UTILITY ENGINE
-        function runLiveClock() {
-            const now = new Date();
-            let hours = now.getHours();
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            
-            hours = hours % 12;
-            hours = hours ? hours : 12;
-            const formattedHours = String(hours).padStart(2, '0');
+langToggleBtn.click();
 
-            document.getElementById('live-clock').innerText = `${formattedHours}:${minutes}:${seconds} ${ampm}`;
-        }
-        setInterval(runLiveClock, 1000);
-        runLiveClock();
+// --- TYPEWRITER EFFECT ENGINE ---
+const words = ["Cyber Security Learner", "Linux Enthusiast", "Future Security Analyst"];
+let wordIdx = 0, charIdx = 0, isDeleting = false;
+function typeEffect() {
+const currentWord = words[wordIdx], element = document.getElementById('typewriter');
+element.innerText = isDeleting ? currentWord.substring(0, charIdx - 1) : currentWord.substring(0, charIdx + 1);
+charIdx = isDeleting ? charIdx - 1 : charIdx + 1;
+let speed = isDeleting ? 30 : 70;
+if (!isDeleting && charIdx === currentWord.length) { speed = 2000; isDeleting = true; }
+else if (isDeleting && charIdx === 0) { isDeleting = false; wordIdx = (wordIdx + 1) % words.length; speed = 300; }
+setTimeout(typeEffect, speed);
+}
+setTimeout(typeEffect, 2200);
 
-        // 4. REALTIME SIMULATED VISITOR COUNTER LAYER ENGINE
-        function updateLiveVisitors() {
-            const dynamicCount = Math.floor(Math.random() * (18 - 6 + 1)) + 6;
-            document.getElementById('visitor-counter').innerText = `${dynamicCount} Active Visitor`;
-        }
-        setInterval(updateLiveVisitors, 4500); 
-        updateLiveVisitors();
+// --- SKILLS PROGRESS LOADING ANIMATION ---
+const runSkillsAnimation = () => {
+const progressBars = document.querySelectorAll('.animated-progress-bar');
+const percentTexts = document.querySelectorAll('.progress-percent-text');
+progressBars.forEach(bar => bar.style.width = bar.getAttribute('data-width'));
+percentTexts.forEach(text => {
+const target = parseInt(text.getAttribute('data-max'));
+let current = 0;
+const interval = setInterval(() => {
+if(current >= target) clearInterval(interval);
+else { current++; text.innerText = current + '%'; }
+}, 12);
+});
+};
 
-        // Async Contact Data Hooks
-        document.getElementById('cyberContactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const submitBtn = document.getElementById('form-submit-btn');
-            const payload = {
-                name: document.getElementById('formName').value,
-                email: document.getElementById('formEmail').value,
-                message: document.getElementById('formMessage').value
-            };
-            submitBtn.innerText = currentLang === 'en' ? "Transmitting Packet..." : "ডেটা ট্রান্সমিট হচ্ছে...";
-            submitBtn.disabled = true;
+const skillsSection = document.getElementById('skills-progress-container');
+const skillsObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => { if(entry.isIntersecting) { runSkillsAnimation(); skillsObserver.unobserve(skillsSection); } });
+}, { threshold: 0.1 });
+skillsObserver.observe(skillsSection);
 
-            try {
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const data = await response.json();
-                if (data.success) {
-                    alert(currentLang === 'en' ? `[TRANSMISSION SUCCESS]: Payload registered smoothly.` : `[ট্রান্সমিশন সফল]: আপনার ডেটা রেজিস্টার্ড হয়েছে।`);
-                    document.getElementById('cyberContactForm').reset();
-                } else {
-                    alert(`[GATEWAY ERROR]: ${data.error}`);
-                }
-            } catch (error) {
-                alert(currentLang === 'en' ? "[SYSTEM FAILURE] Connection refused." : "[সিস্টেম এরর] সার্ভার কানেকশন রিফিউজড।");
-            } finally {
-                submitBtn.innerText = dictionary[currentLang].formBtn;
-                submitBtn.disabled = false;
-            }
-        });
-    </script>
+// --- NAVIGATION INTERSECTION OBSERVER & BACK TO TOP ---
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+let currentActiveId = '';
+sections.forEach(sec => {
+const top = window.scrollY, offset = sec.offsetTop - 120, height = sec.offsetHeight;
+if (top >= offset && top < offset + height) currentActiveId = sec.getAttribute('id');
+});
+navLinks.forEach(link => {
+link.classList.remove('active-nav');
+if(link.getAttribute('href') === `#${currentActiveId}`) link.classList.add('active-nav');
+});
+const btt = document.getElementById('back-to-top');
+if (window.scrollY > 500) { btt.classList.remove('translate-y-24', 'opacity-0'); }
+else { btt.classList.add('translate-y-24', 'opacity-0'); }
+});
+document.getElementById('back-to-top').addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+
+// Theme Engine
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const htmlElement = document.documentElement;
+if (localStorage.getItem('theme') === 'dark') { htmlElement.classList.add('dark'); themeIcon.className = 'fa-solid fa-moon'; }
+else { htmlElement.classList.remove('dark'); themeIcon.className = 'fa-solid fa-sun'; }
+themeToggleBtn.addEventListener('click', () => {
+if (htmlElement.classList.contains('dark')) {
+htmlElement.classList.remove('dark'); htmlElement.classList.add('light');
+themeIcon.className = 'fa-solid fa-sun'; localStorage.setItem('theme', 'light');
+} else {
+htmlElement.classList.remove('light'); htmlElement.classList.add('dark');
+themeIcon.className = 'fa-solid fa-moon'; localStorage.setItem('theme', 'dark');
+}
+});
+
+// Mouse Aura Tracking
+const aura = document.getElementById('mouse-aura');
+let currentX = 0, currentY = 0, targetX = 0, targetY = 0;
+window.addEventListener('mousemove', (e) => { targetX = e.clientX; targetY = e.clientY; });
+function updateAuraPosition() {
+currentX += (targetX - currentX) * 0.30; currentY += (targetY - currentY) * 0.30;
+aura.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
+requestAnimationFrame(updateAuraPosition);
+}
+updateAuraPosition();
+
+// Spotlight Init
+const setupSpotlight = (containerId, spotlightId) => {
+const container = document.getElementById(containerId);
+const spotlight = document.getElementById(spotlightId);
+if(container && spotlight) {
+container.addEventListener('mousemove', (e) => {
+const rect = container.getBoundingClientRect();
+spotlight.style.left = (e.clientX - rect.left) + 'px'; spotlight.style.top = (e.clientY - rect.top) + 'px';
+});
+}
+};
+setupSpotlight('glow-banner-container', 'banner-spotlight');
+setupSpotlight('stats-spotlight', 'stats-spotlight');
+
+// Clock
+function runLiveClock() {
+const now = new Date();
+let hours = now.getHours(), minutes = String(now.getMinutes()).padStart(2, '0'), seconds = String(now.getSeconds()).padStart(2, '0');
+const ampm = hours >= 12 ? 'PM' : 'AM'; hours = hours % 12 || 12;
+document.getElementById('live-clock').innerText = `${String(hours).padStart(2,'0')}:${minutes}:${seconds} ${ampm}`;
+}
+setInterval(runLiveClock, 1000); runLiveClock();
+
+// Visitor Simulated Tracker
+function updateLiveVisitors() {
+document.getElementById('visitor-counter').innerText = `${Math.floor(Math.random() * 12) + 6} Active Security Monitors`;
+}
+setInterval(updateLiveVisitors, 5000); updateLiveVisitors();
+
+// Contact Form Handler
+document.getElementById('cyberContactForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const submitBtn = document.getElementById('form-submit-btn');
+submitBtn.innerText = currentLang === 'en' ? "Transmitting..." : "ট্রান্সমিট হচ্ছে..."; submitBtn.disabled = true;
+setTimeout(() => {
+const toast = document.getElementById('toast-notification');
+document.getElementById('toast-msg').innerText = dictionary[currentLang].toastSuccess;
+toast.classList.remove('translate-x-80', 'opacity-0');
+document.getElementById('cyberContactForm').reset();
+submitBtn.innerText = dictionary[currentLang].formBtn; submitBtn.disabled = false;
+setTimeout(() => toast.classList.add('translate-x-80', 'opacity-0'), 4000);
+}, 1000);
+});
+</script>
 </body>
 </html>
