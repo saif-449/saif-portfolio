@@ -573,7 +573,7 @@ Diploma in Computer Science & Technology student focused on cybersecurity, Linux
       class="space-y-5"
       name="contact"
       method="POST"
-      action="/?success=1"
+      action="/.netlify/functions/contact"
       data-netlify="true"
       data-netlify-honeypot="website"
       novalidate>
@@ -697,9 +697,7 @@ function startTerminalSimulator() {
 }
 document.getElementById('terminal-run-again').addEventListener('click', startTerminalSimulator);
 
-/* ---------------- Data ---------------- */
-// Only real, unfabricated projects. Repository URLs are placeholders until the
-// real repos exist — labelled honestly instead of pointing to a fake link.
+
 const projects = [
   { icon: 'fa-network-wired', title: 'Port Scanner', descKey: 'pDesc1', git: null, stack: ['Python', 'Socket', 'CLI'] },
   { icon: 'fa-shield-halved', title: 'Linux Hardening Toolkit', descKey: 'pDesc2', git: null, stack: ['Bash', 'Linux', 'Sysctl', 'Firewall'] },
@@ -733,8 +731,7 @@ function renderProjects() {
   applyTranslations();
 }
 
-// Only certificates that are real. Mark verification links as placeholders
-// until real credential URLs are available — never invent a verification link.
+
 const certificates = [
   { title: 'Cisco Introduction to Cybersecurity', issuer: 'Cisco Networking Academy', status: 'completed', verify: null },
   { title: 'Cisco Networking Basics', issuer: 'Cisco Networking Academy', status: 'completed', verify: null },
@@ -859,8 +856,7 @@ function renderAreas() {
   applyTranslations();
 }
 
-// Only list writeups that actually exist. Unpublished ones show "Coming Soon"
-// instead of a fake "Read Writeup" link.
+
 const blogs = [
   { title: 'Linux Hardening Notes', cat: 'Linux', date: '2026-05-14', url: null },
   { title: 'Nmap Enumeration Notes', cat: 'Networking', date: '2026-05-28', url: null },
@@ -1180,15 +1176,16 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-/* ---------------- Secure Netlify contact form ----------------
-   Netlify handles the submission and stores it in the site's Forms area.
-   No API key, bot token, or email credential is exposed in this frontend.
-   The "website" honeypot helps filter basic automated spam. */
+
 const contactForm = document.getElementById('cyberContactForm');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', function (e) {
+  contactForm.addEventListener('submit', async function (e) {
+    // Send through the Netlify Function without redirecting the page.
+    e.preventDefault();
+
     const errorBox = document.getElementById('form-error');
+    const submitBtn = document.getElementById('form-submit-btn');
     const name = document.getElementById('formName').value.trim();
     const email = document.getElementById('formEmail').value.trim();
     const message = document.getElementById('formMessage').value.trim();
@@ -1199,41 +1196,70 @@ if (contactForm) {
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    // Honeypot: ignore bot submissions.
     if (website) {
-      e.preventDefault();
       return;
     }
 
     if (!name || name.length > 100 || !emailPattern.test(email) ||
         email.length > 150 || !message || message.length > 2000) {
-      e.preventDefault();
       errorBox.innerText = dictionary[currentLang].formErrValidation;
       errorBox.classList.remove('hidden');
       return;
     }
 
-    const submitBtn = document.getElementById('form-submit-btn');
     submitBtn.disabled = true;
     submitBtn.innerText = currentLang === 'en' ? 'Sending...' : 'পাঠানো হচ্ছে...';
+
+    try {
+      const response = await fetch('/.netlify/functions/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          website
+        })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Could not send your message.');
+      }
+
+      const toast = document.getElementById('toast-notification');
+      const toastMsg = document.getElementById('toast-msg');
+
+      if (toast && toastMsg) {
+        toastMsg.innerText = dictionary[currentLang].toastSuccess;
+        toast.classList.remove('translate-x-[28rem]', 'opacity-0');
+
+        setTimeout(() => {
+          toast.classList.add('translate-x-[28rem]', 'opacity-0');
+        }, 4000);
+      }
+
+      contactForm.reset();
+
+    } catch (error) {
+      console.error('Contact form error:', error);
+      errorBox.innerText =
+        currentLang === 'en'
+          ? 'Could not send your message. Please try again later.'
+          : 'মেসেজ পাঠানো যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।';
+      errorBox.classList.remove('hidden');
+
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerText = currentLang === 'en' ? 'Send Message' : 'মেসেজ পাঠান';
+    }
   });
 }
 
-/* Show a friendly success message after Netlify redirects back with ?success=1 */
-const params = new URLSearchParams(window.location.search);
-if (params.get('success') === '1') {
-  const toast = document.getElementById('toast-notification');
-  const toastMsg = document.getElementById('toast-msg');
-
-  if (toast && toastMsg) {
-    toastMsg.innerText = dictionary[currentLang].toastSuccess;
-    toast.classList.remove('translate-x-[28rem]', 'opacity-0');
-    setTimeout(() => {
-      toast.classList.add('translate-x-[28rem]', 'opacity-0');
-    }, 4000);
-  }
-
-  window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
-}
 </script>
 </body>
 </html>
