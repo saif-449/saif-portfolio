@@ -8,18 +8,18 @@
 <meta property="og:title" content="Saif Khan | Cyber Security Learner">
 <meta property="og:description" content="Diploma in Computer Science & Technology student focused on cybersecurity, Linux, networking, Python, and hands-on security labs.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://saif449.netlify.app">
+<meta property="og:url" content="[ADD REAL VALUE HERE — e.g. https://saifkhan.dev]">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Saif Khan | Cyber Security Learner">
 <meta name="twitter:description" content="Diploma in Computer Science & Technology student focused on cybersecurity, Linux, networking, Python, and hands-on security labs.">
-<link rel="canonical" href="https://saif449.netlify.app">
+<link rel="canonical" href="[ADD REAL VALUE HERE]">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Saif Khan",
   "description": "Cyber Security Learner — Diploma in Computer Science & Technology student.",
-  "url": "https://saif449.netlify.app",
+  "url": "[ADD REAL VALUE HERE]",
   "sameAs": [
     "https://github.com/saif-449",
     "https://www.linkedin.com/in/saif-khan-34ba4a24b",
@@ -139,6 +139,7 @@ html.dark .status-learning { color: #10b981; }
 </head>
 <body class="bg-[#f8fafc] dark:bg-[#030712] text-brand-dark dark:text-slate-100 antialiased selection:bg-brand-blue selection:text-white relative">
 
+<!-- Decorative floating icons (visual only, not simulated data) -->
 <div class="absolute inset-0 overflow-hidden pointer-events-none z-0 w-full h-full" aria-hidden="true">
   <div class="floating-badge text-brand-cyber dark:text-emerald-500/20 text-xl" style="top: 15%; left: 8%; animation-delay: 0s;"><i class="fa-brands fa-linux"></i></div>
   <div class="floating-badge text-brand-blue dark:text-cyan-500/20 text-2xl" style="top: 30%; right: 10%; animation-delay: 2s;"><i class="fa-brands fa-python"></i></div>
@@ -210,6 +211,7 @@ Diploma in Computer Science & Technology student focused on cybersecurity, Linux
 </div>
 
 <div class="pt-6">
+<!-- Place the actual CV file at assets/Saif_Khan_CV.pdf -->
 <a href="assets/Saif_Khan_CV.pdf" download="Saif_Khan_CV.pdf" id="cv-download-btn" class="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue to-brand-indigo dark:from-brand-cyber dark:to-emerald-500 text-white dark:text-brand-dark font-semibold text-sm px-8 py-4 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 active:scale-95 premium-btn">
 <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> <span id="cv-btn-txt">Download CV</span>
 </a>
@@ -277,7 +279,7 @@ Diploma in Computer Science & Technology student focused on cybersecurity, Linux
 </div>
 </section>
 
-<!-- CYBERSECURITY FOCUS -->
+<!-- CYBERSECURITY FOCUS (replaces fake metrics dashboard) -->
 <section id="focus-areas" class="py-24 bg-transparent relative z-10 border-t dark:border-slate-800/50">
 <div class="max-w-6xl mx-auto px-4 sm:px-6">
   <div class="text-center space-y-3 mb-16" data-aos="fade-up">
@@ -437,7 +439,7 @@ Diploma in Computer Science & Technology student focused on cybersecurity, Linux
 </div>
 </section>
 
-<!-- SECURITY SCANNER DEMO -->
+<!-- SECURITY SCANNER DEMO (clearly simulated, no real scanning) -->
 <section class="py-16 bg-transparent relative z-10">
 <div class="max-w-6xl mx-auto px-4 sm:px-6">
 <div class="w-full bg-gradient-to-br from-[#0b1329] via-[#0f172a] to-[#0b1329] border border-white/15 dark:border-emerald-500/20 rounded-3xl py-16 px-4 sm:px-8 lg:px-12 text-center text-white relative overflow-hidden shadow-xl">
@@ -571,6 +573,7 @@ Diploma in Computer Science & Technology student focused on cybersecurity, Linux
       class="space-y-5"
       name="contact"
       method="POST"
+      action="/thank-you.html"
       netlify
       data-netlify="true"
       netlify-honeypot="website"
@@ -578,7 +581,7 @@ Diploma in Computer Science & Technology student focused on cybersecurity, Linux
       accept-charset="UTF-8"
       novalidate>
       <input type="hidden" name="form-name" value="contact">
-
+<!-- Honeypot field: real users never fill this in; bots often do -->
 <div class="hidden" aria-hidden="true">
 <label for="formWebsite">Leave this field empty</label>
 <input type="text" id="formWebsite" name="website" tabindex="-1" autocomplete="off">
@@ -634,7 +637,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!reduceMotion) setTimeout(typeEffect, 1500);
 });
 
-/* Terminal simulator */
+/* ---------------- Terminal simulator (content only, honest) ---------------- */
 const terminalLogs = [
   { cmd: "whoami", output: "saif_khan // Cyber Security Learner" },
   { cmd: "skills", output: "Linux | Networking | Python | Web Security | VAPT Fundamentals" },
@@ -697,7 +700,9 @@ function startTerminalSimulator() {
 }
 document.getElementById('terminal-run-again').addEventListener('click', startTerminalSimulator);
 
-/* Data */
+/* ---------------- Data ---------------- */
+// Only real, unfabricated projects. Repository URLs are placeholders until the
+// real repos exist — labelled honestly instead of pointing to a fake link.
 const projects = [
   { icon: 'fa-network-wired', title: 'Port Scanner', descKey: 'pDesc1', git: null, stack: ['Python', 'Socket', 'CLI'] },
   { icon: 'fa-shield-halved', title: 'Linux Hardening Toolkit', descKey: 'pDesc2', git: null, stack: ['Bash', 'Linux', 'Sysctl', 'Firewall'] },
@@ -731,6 +736,8 @@ function renderProjects() {
   applyTranslations();
 }
 
+// Only certificates that are real. Mark verification links as placeholders
+// until real credential URLs are available — never invent a verification link.
 const certificates = [
   { title: 'Cisco Introduction to Cybersecurity', issuer: 'Cisco Networking Academy', status: 'completed', verify: null },
   { title: 'Cisco Networking Basics', issuer: 'Cisco Networking Academy', status: 'completed', verify: null },
@@ -855,6 +862,8 @@ function renderAreas() {
   applyTranslations();
 }
 
+// Only list writeups that actually exist. Unpublished ones show "Coming Soon"
+// instead of a fake "Read Writeup" link.
 const blogs = [
   { title: 'Linux Hardening Notes', cat: 'Linux', date: '2026-05-14', url: null },
   { title: 'Nmap Enumeration Notes', cat: 'Networking', date: '2026-05-28', url: null },
@@ -880,7 +889,7 @@ function renderBlogs() {
   `).join('');
 }
 
-/* Language toggle */
+/* ---------------- Language toggle ---------------- */
 let currentLang = 'bn';
 const dictionary = {
 en: {
@@ -953,7 +962,7 @@ timelineDesc1: "শুরু করি লিনাক্স কমান্ড 
 timelineDesc2: "পাইথন প্রোগ্রামিং এবং নেটওয়ার্কিং ফান্ডামেন্টালস (TCP/IP, DNS, রাউটিং) শেখা শুরু করি।",
 timelineDesc3: "সাইবার সিকিউরিটির মূল ধারণা শিখি এবং TryHackMe-তে হাতে-কলমে অনুশীলন শুরু করি।",
 timelineDesc4: "নিজের প্রজেক্ট তৈরি করা এবং নিয়মিত সিকিউরিটি ল্যাব প্র্যাকটিসের মাধ্যমে স্কিল আরও শক্তিশালী করা।",
-secLearningTitle: "currently যা শিখছি", rmActiveMatrix: "চলমান পড়াশোনা তালিকা",
+secLearningTitle: "বর্তমানে যা শিখছি", rmActiveMatrix: "চলমান পড়াশোনা তালিকা",
 rmLearn1: "লিনাক্স অ্যাডমিনিস্ট্রেশন ও হার্ডেনিং", rmLearn2: "নেটওয়ার্কিং ফান্ডামেন্টালস", rmLearn3: "Nmap ও নেটওয়ার্ক এনুমারেশন", rmLearn4: "Wireshark ও ট্রাফিক অ্যানালাইসিস", rmLearn5: "Burp Suite ও ওয়েব সিকিউরিটি", rmLearn6: "সিকিউরিটি অটোমেশনের জন্য পাইথন", rmLearn7: "Git ও GitHub", rmLearn8: "SOC ফান্ডামেন্টালস",
 secRoadmapTitle: "সাইবার সিকিউরিটি রোডম্যাপ", rmTargetGrid: "মাইলস্টোন",
 rmMap1: "কম্পিউটার ফান্ডামেন্টালস", rmMap2: "লিনাক্স ফান্ডামেন্টালস", rmMap3: "নেটওয়ার্কিং ফান্ডামেন্টালস", rmMap4: "বেসিক পাইথন",
@@ -1089,7 +1098,7 @@ document.getElementById('foot-nav-1').innerText = d.navHome;
 applyTranslations();
 });
 
-/* Typewriter */
+/* ---------------- Typewriter ---------------- */
 const words = ["Cyber Security Learner", "Linux & Networking Enthusiast", "Python Security Automation", "Future Security Analyst"];
 let wordIdx = 0, charIdx = 0, isDeleting = false;
 function typeEffect() {
@@ -1103,7 +1112,7 @@ function typeEffect() {
   setTimeout(typeEffect, speed);
 }
 
-/* Scroll spy */
+/* ---------------- Scroll spy + back to top ---------------- */
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 window.addEventListener('scroll', () => {
@@ -1124,7 +1133,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 document.getElementById('back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 
-/* Theme toggle */
+/* ---------------- Theme toggle ---------------- */
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 const htmlElement = document.documentElement;
@@ -1138,7 +1147,7 @@ themeToggleBtn.addEventListener('click', () => {
   }
 });
 
-/* Mouse aura */
+/* ---------------- Mouse aura (visual only) ---------------- */
 if (!reduceMotion) {
   const aura = document.getElementById('mouse-aura');
   let currentX = 0, currentY = 0, targetX = 0, targetY = 0;
@@ -1153,7 +1162,7 @@ if (!reduceMotion) {
   updateAuraPosition();
 }
 
-/* Security scanner demo */
+/* ---------------- Security scanner demo (clearly labelled, local-only) ---------------- */
 document.getElementById('scan-btn').addEventListener('click', () => {
   const input = document.getElementById('scan-input');
   const resultBox = document.getElementById('scan-result');
@@ -1174,13 +1183,14 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-/* Netlify Contact Form Handler (AJAX) */
+/* ---------------- Netlify contact form ----------------
+   Netlify handles this form submission.
+   The form is also declared statically in the HTML so Netlify can detect it at deploy time.
+*/
 const contactForm = document.getElementById('cyberContactForm');
 
 if (contactForm) {
   contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    
     const errorBox = document.getElementById('form-error');
     const submitBtn = document.getElementById('form-submit-btn');
 
@@ -1194,35 +1204,34 @@ if (contactForm) {
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (website) return;
+    /* Honeypot: silently ignore bot submissions. */
+    if (website) {
+      e.preventDefault();
+      return;
+    }
 
-    if (!name || name.length > 100 || !emailPattern.test(email) || email.length > 150 || !message || message.length > 2000) {
+    if (
+      !name ||
+      name.length > 100 ||
+      !emailPattern.test(email) ||
+      email.length > 150 ||
+      !message ||
+      message.length > 2000
+    ) {
+      e.preventDefault();
       errorBox.innerText = dictionary[currentLang].formErrValidation;
       errorBox.classList.remove('hidden');
       return;
     }
 
+    /* IMPORTANT:
+       Do NOT preventDefault here.
+       The browser performs the normal POST to Netlify Forms.
+    */
     submitBtn.disabled = true;
-    submitBtn.innerText = currentLang === 'en' ? 'Sending...' : 'পাঠানো হচ্ছে...';
-
-    const formData = new FormData(contactForm);
-    fetch('/', {
-      method: 'POST',
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString()
-    })
-    .then(() => {
-      alert(currentLang === 'en' ? 'Message sent successfully!' : 'বার্তাটি সফলভাবে পাঠানো হয়েছে!');
-      contactForm.reset();
-      submitBtn.disabled = false;
-      submitBtn.innerText = dictionary[currentLang].formBtn;
-    })
-    .catch((error) => {
-      errorBox.innerText = dictionary[currentLang].formErrGeneric;
-      errorBox.classList.remove('hidden');
-      submitBtn.disabled = false;
-      submitBtn.innerText = dictionary[currentLang].formBtn;
-    });
+    submitBtn.innerText = currentLang === 'en'
+      ? 'Sending...'
+      : 'পাঠানো হচ্ছে...';
   });
 }
 </script>

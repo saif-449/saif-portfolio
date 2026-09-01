@@ -1,26 +1,97 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Message Sent | Saif Khan</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { font-family: Arial, sans-serif; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030712">
+<meta name="robots" content="noindex, nofollow">
+<title>Message Sent | Saif Khan</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script>
+tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{blue:'#3b82f6',indigo:'#6366f1',cyber:'#10b981',dark:'#0f172a'}},fontFamily:{sans:['Plus Jakarta Sans','sans-serif'],mono:['Fira Code','monospace']}}}};
+</script>
+<style>
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden}
+.grid-bg{background-image:linear-gradient(rgba(59,130,246,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.055) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black 20%,transparent 100%)}
+.dark .grid-bg{background-image:linear-gradient(rgba(16,185,129,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(16,185,129,.055) 1px,transparent 1px)}
+.glow{box-shadow:0 0 0 1px rgba(16,185,129,.12),0 25px 80px rgba(2,132,199,.12),0 0 80px rgba(16,185,129,.08)}
+.card-in{animation:cardIn .7s ease both}.check-ring{animation:pop .65s cubic-bezier(.2,.8,.2,1) both}.check-icon{animation:check .55s .25s ease both}.pulse-dot{animation:pulseDot 1.8s ease-in-out infinite}
+@keyframes pop{0%{transform:scale(.5);opacity:0}70%{transform:scale(1.08);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes check{0%{transform:scale(.3) rotate(-15deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
+@keyframes cardIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes pulseDot{0%,100%{opacity:.35;transform:scale(.9)}50%{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
 </head>
-<body class="min-h-screen bg-slate-50 flex items-center justify-center px-4">
-  <main class="w-full max-w-lg bg-white rounded-3xl shadow-xl p-10 text-center border border-slate-200">
-    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl">
-      ✓
-    </div>
-    <h1 class="text-3xl font-extrabold text-slate-900">Message Sent!</h1>
-    <p class="mt-4 text-slate-600 leading-relaxed">
-      Thank you for contacting me. I received your message and will get back to you as soon as possible.
-    </p>
-    <a href="/" class="inline-block mt-8 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold transition">
-      Back to Portfolio
-    </a>
-  </main>
+<body class="min-h-screen bg-slate-50 dark:bg-[#030712] text-slate-900 dark:text-slate-100 antialiased">
+
+<div class="fixed inset-0 grid-bg pointer-events-none"></div>
+<div class="fixed -top-32 -left-32 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none"></div>
+<div class="fixed -bottom-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+
+<main class="min-h-screen flex items-center justify-center px-4 py-12 relative z-10">
+<section class="w-full max-w-2xl card-in">
+<div class="mb-5 flex items-center justify-between px-2">
+<div class="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
+<span class="pulse-dot w-2 h-2 rounded-full bg-emerald-500"></span>
+MESSAGE_STATUS: <span class="text-emerald-500 font-bold">DELIVERED</span>
+</div>
+<div class="text-xs font-mono text-slate-400 dark:text-slate-600">saif@linux:~$</div>
+</div>
+
+<div class="relative overflow-hidden rounded-[2rem] border border-slate-200/70 dark:border-white/10 bg-white/80 dark:bg-[#0b1329]/80 backdrop-blur-2xl glow">
+<div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent"></div>
+<div class="px-6 sm:px-10 lg:px-14 py-12 sm:py-16 text-center">
+
+<div class="check-ring mx-auto mb-8 w-24 h-24 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center shadow-[0_0_45px_rgba(16,185,129,.18)]">
+<div class="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/25">
+<i class="check-icon fa-solid fa-check text-2xl text-white"></i>
+</div>
+</div>
+
+<div class="font-mono text-xs uppercase tracking-[.25em] text-emerald-500 font-bold mb-4">Transmission Complete</div>
+
+<h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+Message Sent<span class="text-emerald-500">.</span>
+</h1>
+
+<p class="mt-5 max-w-xl mx-auto text-sm sm:text-base leading-7 text-slate-600 dark:text-slate-400">
+Thank you for reaching out. Your message has been received successfully.
+I'll review it and get back to you as soon as possible.
+</p>
+
+<div class="mt-9 mx-auto max-w-md rounded-2xl border border-slate-200/70 dark:border-white/10 bg-slate-50/80 dark:bg-slate-950/50 p-4 text-left font-mono text-xs">
+<div class="flex items-center justify-between">
+<span class="text-slate-400">STATUS</span><span class="text-emerald-500 font-bold">SUCCESS</span>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-slate-400">DELIVERY</span><span class="text-slate-700 dark:text-slate-300">Netlify Forms</span>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-slate-400">NEXT_STEP</span><span class="text-blue-500 dark:text-cyan-400">Response pending</span>
+</div>
+</div>
+
+<div class="mt-9 flex flex-col sm:flex-row justify-center gap-3">
+<a href="/" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-indigo dark:from-brand-cyber dark:to-emerald-500 text-white dark:text-brand-dark font-bold text-sm shadow-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300">
+<i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+</a>
+<a href="mailto:Alviahmedsaif321@gmail.com" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/60 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:border-emerald-500 hover:text-emerald-500 transition-all duration-300">
+<i class="fa-solid fa-envelope"></i> Email Me
+</a>
+</div>
+
+</div>
+<div class="px-6 sm:px-10 py-4 border-t border-slate-200/60 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
+<span>SAIF KHAN // CYBER SECURITY LEARNER</span><span>© 2026</span>
+</div>
+</div>
+</section>
+</main>
 </body>
 </html>
